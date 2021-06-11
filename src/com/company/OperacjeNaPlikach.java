@@ -5,9 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 public class OperacjeNaPlikach {
-
     void tworz(String nazwaPliku) throws FileNotFoundException {
         File file = new File(nazwaPliku);
         boolean exists = file.exists();
@@ -26,11 +24,23 @@ public class OperacjeNaPlikach {
                         String tekst = scanner.nextLine();
                         Matcher matcherTekst = patternTekst.matcher(tekst);
                         if(matcherTekst.find()){
-                            System.out.println(krajPoWycieciu);
-                            System.out.println(tekst);
+                            String tekstPoWycieciu = null;
+                            for(int i = tekst.length(); i > 0; i--){
+                                if(tekst.charAt(i-1)=='>' && tekst.charAt(i-2)=='Y'){
+                                    tekstPoWycieciu = tekst.substring(i);
+                                    break;
+                                }
+                            }
+                            while(scanner.hasNextLine()){
+                                String nextText = scanner.nextLine();
+                                if(nextText.equals(" Reuter") || nextText.equals(" REUTER")){
+                                    break;
+                                }
+                                tekstPoWycieciu = tekstPoWycieciu + nextText;
+                            }
+                            Kontenery.WszytkieTeksty.add(new Teskt(krajPoWycieciu,tekstPoWycieciu));
                             break;
                         }
-
                     }
                 }
             }
