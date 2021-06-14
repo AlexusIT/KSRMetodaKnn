@@ -38,7 +38,7 @@ public class OperacjeNaPlikach {
                                 }
                                 tekstPoWycieciu = tekstPoWycieciu + nextText;
                             }
-                            Kontenery.WszytkieTeksty.add(new Teskt(krajPoWycieciu,tekstPoWycieciu));
+                            Kontenery.WszytkieTeksty.add(new Tekst(krajPoWycieciu,tekstPoWycieciu));
                             break;
                         }
                     }
