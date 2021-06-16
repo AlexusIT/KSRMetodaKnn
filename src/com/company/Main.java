@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Cechy cechy = new Cechy();
         OperacjeNaPlikach operacjeNaPlikach = new OperacjeNaPlikach();
-	    operacjeNaPlikach.tworz("reut2-005.sgm");
+	    operacjeNaPlikach.tworz("reut2-015.sgm");
         //String kraj= "jprdl";
         //String tekstt[] = "dwa euopa 1 YEN EUR in dwa in USD $ JPY";
         //Tekst tekst = new Tekst(kraj,tekstt);
@@ -68,7 +68,7 @@ public class Main {
             } if (x==6){
                 cechy.cecha7(Kontenery.WszytkieTeksty.get(i));
             } if (x==7){
-
+                cechy.cecha8(Kontenery.WszytkieTeksty.get(i));
             } if (x==8){
 
             } if (x==9){

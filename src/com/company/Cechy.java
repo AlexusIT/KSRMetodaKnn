@@ -83,23 +83,6 @@ public class Cechy {
 
     }
     void cecha7(Tekst tekst){
-        //Francja przed nazwiskiem PRZENIESC DO CECHY 8
-        String Le = "Le";
-        String le = "le";
-        String La = "La";
-        String la = "la";
-        String Les = "Les";
-        String les = "les";
-        String De = "De";
-        String de = "de";
-        String Du = "Du";
-        String du = "du";
-        String Del = "Del";
-        String del = "del";
-        String Dela = "Dela";
-        String dela = "dela";
-        String Des = "Des";
-        String des = "des";
         //Japonia na koncu imienia/nazwiska
         String[] koncJPN = {"mi","ko","ato","uki","oki","shi","oto","abe","ito","chi","ura","oro","iro"};
         String mi = "mi";
@@ -180,6 +163,47 @@ public class Cechy {
 
             if(tekst.listaSlow.get(i).equals("Fahrenheit") || tekst.listaSlow.get(i).equals("fahrenheit")){
                 tekst.licznikMiaryAmeryka++;
+            }
+        }
+    }
+    void cecha8(Tekst tekst){
+        //Francja przed nazwiskiem
+        String[] przedFRC = {"Le","le","La","la","Les","les","De","de","Du","du","Del","del","Dela","dela","Des","des"};
+        String Le = "Le";
+        String le = "le";
+        String La = "La";
+        String la = "la";
+        String Les = "Les";
+        String les = "les";
+        String De = "De";
+        String de = "de";
+        String Du = "Du";
+        String du = "du";
+        String Del = "Del";
+        String del = "del";
+        String Dela = "Dela";
+        String dela = "dela";
+        String Des = "Des";
+        String des = "des";
+        //Niemieckie
+        String von = "von";
+        for(int i = 0; i<tekst.listaSlow.size()-1; i++){
+            if(Character.isUpperCase(tekst.listaSlow.get(i+1).charAt(0))){
+                if(tekst.listaSlow.get(i).equals(von)){
+                    tekst.licznikVON++;
+                    System.out.println("dodalem von");
+                    break;
+                }
+                else{
+                    for(int j = 0; j<przedFRC.length; j++){
+                        if(tekst.listaSlow.get(i).equals(przedFRC[j])){
+                            tekst.licznikFran++;
+                            System.out.println(tekst.kraj);
+                            System.out.println("dodalem fran");
+                            return;
+                        }
+                    }
+                }
             }
         }
     }

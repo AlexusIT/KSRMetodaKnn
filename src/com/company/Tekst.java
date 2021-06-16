@@ -21,6 +21,9 @@ public class Tekst {
     //cecha 3
     public int licznikMiaryTempEuropa = 0;
     public int licznikMiaryTempAmeryka = 0;
+    //cecha 8
+    public int licznikVON = 0;
+    public int licznikFran = 0;
 
     public Tekst(String kraj, ArrayList<String> listaSlow) {
         this.kraj = kraj;
