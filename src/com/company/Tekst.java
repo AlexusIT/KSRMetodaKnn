@@ -29,6 +29,8 @@ public class Tekst {
     //cecha 8
     public int licznikVON = 0;
     public int licznikFran = 0;
+    //cecha 9
+    public int licznikZdan = 0;
 
     public Tekst(String kraj, ArrayList<String> listaSlow) {
         this.kraj = kraj;

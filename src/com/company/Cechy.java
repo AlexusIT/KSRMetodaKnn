@@ -206,4 +206,19 @@ public class Cechy {
             }
         }
     }
+    void cecha9(Tekst tekst){
+        for(int i = 0; i < tekst.listaSlow.size(); i++){
+            if(Character.isUpperCase(tekst.listaSlow.get(i).charAt(0))){
+                for(int j = 0; j<tekst.listaSlow.size(); j++){
+                    i++;
+                    if(tekst.listaSlow.get(j).endsWith("rms.")){
+                        tekst.licznikZdan++;
+                        System.out.println("Licznik zdan:"+ tekst.licznikZdan);
+                        System.out.println("i: "+ i);
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }

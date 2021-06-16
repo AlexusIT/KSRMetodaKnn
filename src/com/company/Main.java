@@ -46,8 +46,12 @@ public class Main {
                         wybranaCecha(i,cechy);
                     }
                 }
+                for(int j = 0; j<Kontenery.WszytkieTeksty.get(0).listaSlow.size(); j++){
+                    System.out.print(Kontenery.WszytkieTeksty.get(0).listaSlow.get(j)+" ");
+                }
                 for (int i = 0; i < 50; ++i) System.out.println();
                 menu(cechy);
+
         }
     }
 
@@ -70,7 +74,7 @@ public class Main {
             } if (x==7){
                 cechy.cecha8(Kontenery.WszytkieTeksty.get(i));
             } if (x==8){
-
+                cechy.cecha9(Kontenery.WszytkieTeksty.get(0));
             } if (x==9){
 
             }
