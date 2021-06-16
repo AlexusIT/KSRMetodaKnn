@@ -211,10 +211,8 @@ public class Cechy {
             if(Character.isUpperCase(tekst.listaSlow.get(i).charAt(0))){
                 for(int j = 0; j<tekst.listaSlow.size(); j++){
                     i++;
-                    if(tekst.listaSlow.get(j).endsWith("rms.")){
+                    if(tekst.listaSlow.get(j).endsWith(".")){
                         tekst.licznikZdan++;
-                        System.out.println("Licznik zdan:"+ tekst.licznikZdan);
-                        System.out.println("i: "+ i);
                         break;
                     }
                 }
