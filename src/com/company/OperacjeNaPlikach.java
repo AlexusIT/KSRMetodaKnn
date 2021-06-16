@@ -12,7 +12,7 @@ public class OperacjeNaPlikach {
     void tworz(String nazwaPliku) throws FileNotFoundException {
         File file = new File(nazwaPliku);
         boolean exists = file.exists();
-        System.out.println("Czy plik istnieje: " + exists);
+        //System.out.println("Czy plik istnieje: " + exists);
         Scanner scanner = new Scanner(file);
         Pattern patternKraj = Pattern.compile("<PLACES><D>");
         while(scanner.hasNextLine()){
