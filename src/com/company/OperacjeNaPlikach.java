@@ -2,6 +2,9 @@ package com.company;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -38,7 +41,29 @@ public class OperacjeNaPlikach {
                                 }
                                 tekstPoWycieciu = tekstPoWycieciu + nextText;
                             }
-                            Kontenery.WszytkieTeksty.add(new Tekst(krajPoWycieciu,tekstPoWycieciu));
+                            String[] slowa = tekstPoWycieciu.split(" ");
+                            ArrayList<String> listaSlow = new ArrayList<>(Arrays.asList(slowa));
+                            //int licz = listaSlow.size();
+                            //int l = 0;
+                            //niech to na chwile zostanie
+                            /*for(int i = 0; i < licz; i++){
+                                if(l==licz){
+                                    break;
+                                }
+                                if(listaSlow.get(i).isEmpty()){
+                                    listaSlow.remove(i);
+                                    i--;
+                                }
+                                l++;
+                            }*/
+                            for(int i = 0; i < listaSlow.size(); i++){
+
+                                if(listaSlow.get(i).isEmpty()){
+                                    listaSlow.remove(i);
+                                    i--;
+                                }
+                            }
+                            Kontenery.WszytkieTeksty.add(new Tekst(krajPoWycieciu,listaSlow));
                             break;
                         }
                     }
@@ -47,5 +72,4 @@ public class OperacjeNaPlikach {
         }
 
     }
-
 }
