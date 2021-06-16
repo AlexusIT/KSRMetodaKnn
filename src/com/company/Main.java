@@ -64,7 +64,7 @@ public class Main {
             } if (x==4){
 
             } if (x==5){
-
+                cechy.cecha6(Kontenery.WszytkieTeksty.get(i));
             } if (x==6){
                 cechy.cecha7(Kontenery.WszytkieTeksty.get(i));
             } if (x==7){
