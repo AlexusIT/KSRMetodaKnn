@@ -31,6 +31,9 @@ public class Tekst {
     public int licznikFran = 0;
     //cecha 9
     public int licznikZdan = 0;
+    //cecha 10
+    public int licznikZapyt = 0;
+    public int licznikWykrzyk = 0;
 
     public Tekst(String kraj, ArrayList<String> listaSlow) {
         this.kraj = kraj;

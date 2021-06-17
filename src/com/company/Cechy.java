@@ -79,41 +79,40 @@ public class Cechy {
         }
     }
     void cecha4(Tekst tekst){
+        String EURO = "EURO";
+        String EUR="EUR";
+        String euro="euro";
+        String E="€";
+
+        String Dollar="Dollar";
+        String dollar="dollar";
+        String USD="USD";
+        String usd="usd";
+        String S = "$";
+
+        String CAD="CAD";
+
+        String JPY="JPY";
+        String YEN="YEN";
         for(int i=0; i<tekst.listaSlow.size(); i++){
-            Pattern patEURO = Pattern.compile("EURO"); Matcher matEURO = patEURO.matcher(tekst.listaSlow.get(i));
-            Pattern patEUR = Pattern.compile("EUR"); Matcher matEUR = patEUR.matcher(tekst.listaSlow.get(i));
-            Pattern pateuro = Pattern.compile("euro"); Matcher mateuro = pateuro.matcher(tekst.listaSlow.get(i));
-            Pattern patE = Pattern.compile("€"); Matcher matE = patE.matcher(tekst.listaSlow.get(i));
-
-            Pattern patDollar = Pattern.compile("Dollar"); Matcher matDollar = patDollar.matcher(tekst.listaSlow.get(i));
-            Pattern patdollar = Pattern.compile("dollar"); Matcher matdollar = patdollar.matcher(tekst.listaSlow.get(i));
-            Pattern patUSD = Pattern.compile("USD"); Matcher matUSD = patUSD.matcher(tekst.listaSlow.get(i));
-            Pattern patusd = Pattern.compile("usd"); Matcher matusd = patusd.matcher(tekst.listaSlow.get(i));
-            //Pattern patS = Pattern.compile(S); Matcher matS = patS.matcher(tekst.listaSlow.get(i)); nie działa symbol dollara
-
-            Pattern patCAD = Pattern.compile("CAD"); Matcher matCAD = patCAD.matcher(tekst.listaSlow.get(i));
-
-            Pattern patJPY = Pattern.compile("JPY"); Matcher matJPY = patJPY.matcher(tekst.listaSlow.get(i));
-            Pattern patYEN = Pattern.compile("YEN"); Matcher matYEN = patYEN.matcher(tekst.listaSlow.get(i));
-
-            if (matEURO.find()||matEUR.find()||mateuro.find()||matE.find()){
+            if (tekst.listaSlow.get(i).contains(EURO)||tekst.listaSlow.get(i).contains(EUR)||tekst.listaSlow.get(i).endsWith(euro)||tekst.listaSlow.get(i).contains(E)){
                 tekst.licznikEURO++;
                 break;
             }
-            else if (matUSD.find()||matusd.find()){
+            else if (tekst.listaSlow.get(i).contains(USD)||tekst.listaSlow.get(i).contains(usd)||tekst.listaSlow.get(i).contains(S)){
                 tekst.licznikUSD++;
                 break;
             }
-            else if (matCAD.matches()){
+            else if (tekst.listaSlow.get(i).contains(CAD)){
                 tekst.licznikCAD++;
                 break;
             }
-            else if (matdollar.find()||matDollar.find()){
+            else if (tekst.listaSlow.get(i).contains(dollar)||tekst.listaSlow.get(i).contains(Dollar)){
                 tekst.licznikCAD++;
                 tekst.licznikUSD++;
                 break;
             }
-            else if (matJPY.find()||matYEN.find()){
+            else if (tekst.listaSlow.get(i).contains(JPY)||tekst.listaSlow.get(i).contains(YEN)){
                 tekst.licznikJPY++;
                 break;
             }
@@ -211,12 +210,26 @@ public class Cechy {
             if(Character.isUpperCase(tekst.listaSlow.get(i).charAt(0))){
                 for(int j = 0; j<tekst.listaSlow.size(); j++){
                     i++;
-                    if(tekst.listaSlow.get(j).endsWith(".")){
+                    if(tekst.listaSlow.get(j).endsWith(".")||tekst.listaSlow.get(j).endsWith("?")||tekst.listaSlow.get(j).endsWith("!")){
                         tekst.licznikZdan++;
                         break;
                     }
                 }
             }
+        }
+    }
+    void cecha10(Tekst tekst){
+        for(int i = 0; i < tekst.listaSlow.size(); i++){
+            if(tekst.listaSlow.get(i).contains("?")){
+                tekst.licznikZapyt++;
+            }
+            else if(tekst.listaSlow.get(i).contains("!")){
+                tekst.licznikWykrzyk++;
+            }
+        }
+        if(tekst.licznikZapyt > 0 || tekst.licznikWykrzyk > 0) {
+            System.out.println("Liczna znakow zap: " + tekst.licznikZapyt);
+            System.out.println("Liczna znakow wyk: " + tekst.licznikWykrzyk);
         }
     }
 }

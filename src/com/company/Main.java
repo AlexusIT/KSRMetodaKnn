@@ -76,7 +76,7 @@ public class Main {
             } if (x==8){
                 cechy.cecha9(Kontenery.WszytkieTeksty.get(i));
             } if (x==9){
-
+                cechy.cecha10(Kontenery.WszytkieTeksty.get(i));
             }
         }
 
