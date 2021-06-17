@@ -22,6 +22,10 @@ public class Tekst {
     public int licznikCAD = 0;
     public int licznikJPY = 0;
     public int licznikGBP = 0;
+    //cecha 5
+    public int licznikDataAmeryka = 0;
+    public int licznikDataEuropa = 0;
+    public int licznikDataJaponia = 0;
     //cecha 6
     public int licznikLiterFranc = 0;
     public int licznikLiterNiem = 0;

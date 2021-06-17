@@ -1,6 +1,10 @@
 package com.company;
 
 import java.awt.image.AreaAveragingScaleFilter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -146,6 +150,82 @@ public class Cechy {
         System.out.println("    JPN: " +tekst.licznikJPY);
         System.out.println("      CAD: " +tekst.licznikCAD);
     }
+
+    void cecha5(Tekst tekst){
+        for(int i = 0; i<tekst.listaSlow.size(); i++){
+            ///EUROPA
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("d.M.uuuu")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikMiaryEuropa++;
+            } catch (DateTimeParseException ignored){
+            }
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("d-M-uuuu")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikMiaryEuropa++;
+            } catch (DateTimeParseException ignored){
+            }
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("d/M/uuuu")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikMiaryEuropa++;
+            } catch (DateTimeParseException ignored){
+            }
+            ///Ameryka
+            ///EUROPA
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("M.d.uuuu")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikDataAmeryka++;
+            } catch (DateTimeParseException ignored){
+            }
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("M-d-uuuu")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikDataAmeryka++;
+            } catch (DateTimeParseException ignored){
+            }
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("M/d/uuuu")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikDataAmeryka++;
+            } catch (DateTimeParseException ignored){
+            }
+            ///JAPONIA
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("uuuu.M.d")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikDataJaponia++;
+            } catch (DateTimeParseException ignored){
+            }
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("uuuu-M-d")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikDataJaponia++;
+            } catch (DateTimeParseException ignored){
+            }
+            try {
+                LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("uuuu/M/d")
+                        .withResolverStyle(ResolverStyle.STRICT)
+                );
+                tekst.licznikDataJaponia++;
+            } catch (DateTimeParseException ignored){
+            }
+        }
+    }
+
+
+
+
     void cecha6(Tekst tekst){
         String[] literyFranc = {"á", "à", "â", "ć", "ç", "é", "è", "ê", "ë", "í", "î", "ï", "ó", "ô", "ö", "û", "ù", "ü", "ÿ"};
         String[] literyNiem = { "Ä", "ä", "Ö", "ö", "ẞ", "ß", "Ü", "ü",};

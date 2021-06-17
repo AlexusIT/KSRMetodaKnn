@@ -26,7 +26,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Tekst.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Tekst.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Cechy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Cechy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/OperacjeNaPlikach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/OperacjeNaPlikach.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Tekst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tekst.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,31 +96,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1877" height="249" key="GridCell.Tab.0.bottom" timestamp="1623962014834">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="249" key="GridCell.Tab.0.bottom/1920.124.1360.728/0.0.1920.1040@0.0.1920.1040" timestamp="1623962014834" />
-    <state width="1877" height="249" key="GridCell.Tab.0.center" timestamp="1623962014834">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="249" key="GridCell.Tab.0.center/1920.124.1360.728/0.0.1920.1040@0.0.1920.1040" timestamp="1623962014834" />
-    <state width="1877" height="249" key="GridCell.Tab.0.left" timestamp="1623962014834">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="249" key="GridCell.Tab.0.left/1920.124.1360.728/0.0.1920.1040@0.0.1920.1040" timestamp="1623962014834" />
-    <state width="1877" height="249" key="GridCell.Tab.0.right" timestamp="1623962014834">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="249" key="GridCell.Tab.0.right/1920.124.1360.728/0.0.1920.1040@0.0.1920.1040" timestamp="1623962014834" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1623874416550">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/1920.124.1360.728/0.0.1920.1040@0.0.1920.1040" timestamp="1623874416550" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1623862102032">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.124.1360.728/0.0.1920.1040@0.0.1920.1040" timestamp="1623862102032" />
   </component>
 </project>
