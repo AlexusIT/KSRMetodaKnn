@@ -21,7 +21,7 @@ public class OperacjeNaPlikach {
             Matcher matcherKraj = patternKraj.matcher(kraj);
             if(matcherKraj.find()){
                 String krajPoWycieciu = kraj.substring(11, end);
-                if(krajPoWycieciu.equals("west-germany") || krajPoWycieciu.equals("usa") || krajPoWycieciu.equals("france") || krajPoWycieciu.equals("canada") || krajPoWycieciu.equals("japan")){
+                if(krajPoWycieciu.equals("west-germany") || krajPoWycieciu.equals("usa") || krajPoWycieciu.equals("france") || krajPoWycieciu.equals("canada") || krajPoWycieciu.equals("japan") || krajPoWycieciu.equals("uk")){
                     Pattern patternTekst = Pattern.compile("</DATELINE><BODY>");
                     while(scanner.hasNextLine()){
                         String tekst = scanner.nextLine();
@@ -36,7 +36,7 @@ public class OperacjeNaPlikach {
                             }
                             while(scanner.hasNextLine()){
                                 String nextText = scanner.nextLine();
-                                if(nextText.equals(" Reuter") || nextText.equals(" REUTER")){
+                                if(nextText.equals(" Reuter") || nextText.equals(" REUTER") || nextText.contains("&#3;") ){
                                     break;
                                 }
                                 tekstPoWycieciu = tekstPoWycieciu + nextText;

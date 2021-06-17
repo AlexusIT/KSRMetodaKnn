@@ -22,6 +22,7 @@ public class Main {
         }
 
         menu(cechy);
+
     }
 
     static void menu(Cechy cechy) throws IOException {
@@ -58,7 +59,7 @@ public class Main {
     static void wybranaCecha(int x, Cechy cechy){
         for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
             if(x==0){
-
+                cechy.cecha1(Kontenery.WszytkieTeksty.get(i));
             } if (x==1){
                 cechy.cecha2(Kontenery.WszytkieTeksty.get(i));
             } if (x==2){

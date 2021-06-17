@@ -1,5 +1,6 @@
 package com.company;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,34 +9,53 @@ public class Cechy {
     public Cechy() {
     }
 
-    /*void cecha1(Tekst tekst){
-        ArrayList<String> listaOriSlow = new ArrayList<>();
-        ArrayList<Integer> listaWystapienSlow = new ArrayList<>();
-        String[] slowa = tekst.tresc.split(" ");
-        System.out.println("ilosc slow: "+ slowa.length);
-        for (int i = 0; i<slowa.length; i++){
-            if(listaOriSlow.size()==0){
-                listaOriSlow.add(slowa[i]);
-                listaWystapienSlow.add(1);
-            }
-            else{
-                for(int j = 0; j<i;j++){
-                    if(slowa[i].equals(listaOriSlow.get(j))){
-                        listaWystapienSlow.set(j,listaWystapienSlow.get(j)+1);
-                        break;
+    void cecha1(Tekst tekst){
+        ArrayList<String> slowaUnik = new ArrayList<>();
+        ArrayList<Integer> liczbaWystSlowUnik = new ArrayList<>();
+        for(int i = 0; i < tekst.listaSlow.size(); i++){
+            if(tekst.listaSlow.get(i).length()>3){
+                if(slowaUnik.isEmpty()){
+                    slowaUnik.add(tekst.listaSlow.get(i));
+                    liczbaWystSlowUnik.add(1);
+                }
+                else{
+                    int wskaznik=0;
+                    for(int j = 0; j < slowaUnik.size(); j++){
+                        if(tekst.listaSlow.get(i).equals(slowaUnik.get(j))){
+                            liczbaWystSlowUnik.set(j,liczbaWystSlowUnik.get(j)+1);
+                            wskaznik = 1;
+                            break;
+                        }
                     }
-                    else{
-                        listaOriSlow.add(slowa[i]);
-                        listaWystapienSlow.add(1);
-                        break;
+                    if(wskaznik == 0){
+                        slowaUnik.add(tekst.listaSlow.get(i));
+                        liczbaWystSlowUnik.add(1);
                     }
                 }
             }
         }
-        for(int p = 0 ; p<listaOriSlow.size(); p++){
-            System.out.println(listaOriSlow.get(p) + "   " +listaWystapienSlow.get(p));
+        ArrayList<String> najSlowa = new ArrayList<>();
+        ArrayList<Integer> liczbNajSlowa = new ArrayList<>();
+        int tmp = 0;
+        for(int i = 0; i < liczbaWystSlowUnik.size(); i++){
+            if(liczbaWystSlowUnik.get(i) > tmp){
+                tmp = liczbaWystSlowUnik.get(i);
+            }
         }
-    }*/
+        for(int i = 0; i < liczbaWystSlowUnik.size(); i++){
+            if(liczbaWystSlowUnik.get(i).equals(tmp)){
+                najSlowa.add(slowaUnik.get(i));
+                liczbNajSlowa.add(liczbaWystSlowUnik.get(i));
+            }
+        }
+        tekst.listaUnikSlow = najSlowa;
+        tekst.listaWystUnikSlow = liczbNajSlowa;
+        for(int i = 0; i < tekst.listaUnikSlow.size(); i++){
+            System.out.println(tekst.listaUnikSlow.get(i)+ ": "+tekst.listaWystUnikSlow.get(i));
+        }
+        System.out.println("\n NOWY TEKST");
+    }
+
 
 
 
@@ -84,8 +104,6 @@ public class Cechy {
         String euro="euro";
         String E="€";
 
-        String Dollar="Dollar";
-        String dollar="dollar";
         String USD="USD";
         String usd="usd";
         String S = "$";
@@ -94,6 +112,10 @@ public class Cechy {
 
         String JPY="JPY";
         String YEN="YEN";
+        String Y="¥";
+
+        String GBP="GBP";
+        String F="£";
         for(int i=0; i<tekst.listaSlow.size(); i++){
             if (tekst.listaSlow.get(i).contains(EURO)||tekst.listaSlow.get(i).contains(EUR)||tekst.listaSlow.get(i).endsWith(euro)||tekst.listaSlow.get(i).contains(E)){
                 tekst.licznikEURO++;
@@ -107,13 +129,12 @@ public class Cechy {
                 tekst.licznikCAD++;
                 break;
             }
-            else if (tekst.listaSlow.get(i).contains(dollar)||tekst.listaSlow.get(i).contains(Dollar)){
-                tekst.licznikCAD++;
-                tekst.licznikUSD++;
+            else if (tekst.listaSlow.get(i).contains(JPY)||tekst.listaSlow.get(i).contains(YEN)||tekst.listaSlow.get(i).contains(Y)){
+                tekst.licznikJPY++;
                 break;
             }
-            else if (tekst.listaSlow.get(i).contains(JPY)||tekst.listaSlow.get(i).contains(YEN)){
-                tekst.licznikJPY++;
+            else if (tekst.listaSlow.get(i).contains(GBP)||tekst.listaSlow.get(i).contains(F)){
+                tekst.licznikGBP++;
                 break;
             }
         }
@@ -228,8 +249,8 @@ public class Cechy {
             }
         }
         if(tekst.licznikZapyt > 0 || tekst.licznikWykrzyk > 0) {
-            System.out.println("Liczna znakow zap: " + tekst.licznikZapyt);
-            System.out.println("Liczna znakow wyk: " + tekst.licznikWykrzyk);
+            System.out.println("Liczba znakow zap: " + tekst.licznikZapyt);
+            System.out.println("Liczba znakow wyk: " + tekst.licznikWykrzyk);
         }
     }
 }

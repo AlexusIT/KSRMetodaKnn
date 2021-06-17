@@ -7,7 +7,9 @@ public class Tekst {
     //String[] tresc;
     ArrayList<String> listaSlow = new ArrayList<>();
 
-
+    //cecha 1
+    public ArrayList<String> listaUnikSlow= new ArrayList<>();
+    public ArrayList<Integer> listaWystUnikSlow= new ArrayList<>();
     //cecha 2
     public int licznikMiaryEuropa = 0;
     public int licznikMiaryAmeryka = 0;
@@ -19,6 +21,7 @@ public class Tekst {
     public int licznikUSD = 0;
     public int licznikCAD = 0;
     public int licznikJPY = 0;
+    public int licznikGBP = 0;
     //cecha 6
     public int licznikLiterFranc = 0;
     public int licznikLiterNiem = 0;
