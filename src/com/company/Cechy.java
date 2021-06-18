@@ -163,25 +163,24 @@ public class Cechy {
                 LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("d.M.uuuu")
                         .withResolverStyle(ResolverStyle.STRICT)
                 );
-                tekst.licznikMiaryEuropa++;
+                tekst.licznikDataEuropa++;
             } catch (DateTimeParseException ignored){
             }
             try {
                 LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("d-M-uuuu")
                         .withResolverStyle(ResolverStyle.STRICT)
                 );
-                tekst.licznikMiaryEuropa++;
+                tekst.licznikDataEuropa++;
             } catch (DateTimeParseException ignored){
             }
             try {
                 LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("d/M/uuuu")
                         .withResolverStyle(ResolverStyle.STRICT)
                 );
-                tekst.licznikMiaryEuropa++;
+                tekst.licznikDataEuropa++;
             } catch (DateTimeParseException ignored){
             }
             ///Ameryka
-            ///EUROPA
             try {
                 LocalDate.parse(tekst.listaSlow.get(i), DateTimeFormatter.ofPattern("M.d.uuuu")
                         .withResolverStyle(ResolverStyle.STRICT)
@@ -230,7 +229,7 @@ public class Cechy {
 
     void cecha6(Tekst tekst){
         tekst.c6 = 1;
-        String[] literyFranc = {"á", "à", "â", "ć", "ç", "é", "è", "ê", "ë", "í", "î", "ï", "ó", "ô", "ö", "û", "ù", "ü", "ÿ"};
+        String[] literyFranc = {"á", "à", "â", "ć", "ç", "é", "è", "ê", "ë", "í", "î", "ï", "ó", "ô", "û", "ù", "ÿ"};
         String[] literyNiem = { "Ä", "ä", "Ö", "ö", "ẞ", "ß", "Ü", "ü",};
         for(int i = 0; i<tekst.listaSlow.size(); i++){
             for(int j = 0; j<literyFranc.length; j++){
@@ -339,5 +338,51 @@ public class Cechy {
             System.out.println("Liczba znakow zap: " + tekst.licznikZapyt);
             System.out.println("Liczba znakow wyk: " + tekst.licznikWykrzyk);
         }
+    }
+    void dodawanieWykonanychCech(Tekst tekst){
+        if(tekst.c1 == 1){
+
+        }
+        if(tekst.c2 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikMiaryEuropa);
+            tekst.wynikiWykonanychCech.add(tekst.licznikMiaryAmeryka);
+        }
+        if(tekst.c3 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikMiaryTempEuropa);
+            tekst.wynikiWykonanychCech.add(tekst.licznikMiaryTempAmeryka);
+        }
+        if(tekst.c4 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikEURO);
+            tekst.wynikiWykonanychCech.add(tekst.licznikUSD);
+            tekst.wynikiWykonanychCech.add(tekst.licznikCAD);
+            tekst.wynikiWykonanychCech.add(tekst.licznikJPY);
+            tekst.wynikiWykonanychCech.add(tekst.licznikGBP);
+        }
+        if(tekst.c5 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikDataEuropa);
+            tekst.wynikiWykonanychCech.add(tekst.licznikDataAmeryka);
+            tekst.wynikiWykonanychCech.add(tekst.licznikDataJaponia);
+        }
+        if(tekst.c6 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikLiterFranc);
+            tekst.wynikiWykonanychCech.add(tekst.licznikLiterNiem);
+        }
+        if(tekst.c7 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikKoncowekUSACAN);
+            tekst.wynikiWykonanychCech.add(tekst.licznikKoncowekJPN);
+            tekst.wynikiWykonanychCech.add(tekst.licznikKoncowekGER);
+        }
+        if(tekst.c8 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikVON);
+            tekst.wynikiWykonanychCech.add(tekst.licznikFran);
+        }
+        if(tekst.c9 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikZdan);
+        }
+        if(tekst.c10 == 1){
+            tekst.wynikiWykonanychCech.add(tekst.licznikZapyt);
+            tekst.wynikiWykonanychCech.add(tekst.licznikWykrzyk);
+        }
+
     }
 }

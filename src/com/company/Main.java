@@ -58,16 +58,18 @@ public class Main {
                             Kontenery.ZbiorTekstowTestowych.add(Kontenery.WszytkieTeksty.get(i));
                         }
                     }
+                    for (int i = 0; i < 50; ++i) System.out.println();
                     System.out.println("Tekstow wszystkich: "+Kontenery.WszytkieTeksty.size()+ "\n"+
                             "Tekstow uczących: "+ Kontenery.ZbiorTekstowUczacych.size() + "\n" +
-                            "Tekstow testowych: "+ Kontenery.ZbiorTekstowTestowych.size());
+                            "Tekstow testowych: "+ Kontenery.ZbiorTekstowTestowych.size()+"\n");
+                    menu(cechy);
                 }
         }
     }
 
     static void wybranaCecha(int x, Cechy cechy){
         for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
-            if(x==0){
+              if(x==0){
                 cechy.cecha1(Kontenery.WszytkieTeksty.get(i));
             } if (x==1){
                 cechy.cecha2(Kontenery.WszytkieTeksty.get(i));
@@ -88,7 +90,7 @@ public class Main {
             } if (x==9){
                 cechy.cecha10(Kontenery.WszytkieTeksty.get(i));
             }
+            cechy.dodawanieWykonanychCech(Kontenery.WszytkieTeksty.get(i));
         }
-
     }
 }

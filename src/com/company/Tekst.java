@@ -6,7 +6,7 @@ public class Tekst {
     String kraj;
     //String[] tresc;
     ArrayList<String> listaSlow = new ArrayList<>();
-
+    ArrayList<Integer> wynikiWykonanychCech = new ArrayList<>();
     //cecha 1
     public int c1 = 0;
     public ArrayList<String> listaUnikSlow= new ArrayList<>();
