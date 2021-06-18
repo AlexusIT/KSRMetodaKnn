@@ -10,8 +10,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Cechy cechy = new Cechy();
-        OperacjeNaPlikach operacjeNaPlikach = new OperacjeNaPlikach();
-	    operacjeNaPlikach.tworz("reut2-015.sgm");
+        //OperacjeNaPlikach operacjeNaPlikach = new OperacjeNaPlikach();
+	    //operacjeNaPlikach.tworz("reut2-015.sgm");
         menu(cechy);
     }
 
@@ -22,7 +22,9 @@ public class Main {
 
         switch (wyborMenu) {
             case 1:
-                System.out.println("test");
+                System.out.println("Podaj numery plików które chcesz wczytać [00-21]");
+                String zbiorPlikowString = scan.nextLine();
+                wybranyPlik(zbiorPlikowString);
                 for (int i = 0; i < 50; ++i) System.out.println();
                 menu(cechy);
                 break;
@@ -91,6 +93,78 @@ public class Main {
                 cechy.cecha10(Kontenery.WszytkieTeksty.get(i));
             }
             cechy.dodawanieWykonanychCech(Kontenery.WszytkieTeksty.get(i));
+        }
+    }
+
+    static void wybranyPlik(String pliki) throws FileNotFoundException {
+        OperacjeNaPlikach operacjeNaPlikach = new OperacjeNaPlikach();
+
+
+        if (pliki.contains("00")){
+            operacjeNaPlikach.tworz("reut2-000.sgm");
+        }
+        if (pliki.contains("01")){
+            operacjeNaPlikach.tworz("reut2-001.sgm");
+        }
+        if (pliki.contains("02")){
+            operacjeNaPlikach.tworz("reut2-002.sgm");
+        }
+        if (pliki.contains("03")){
+            operacjeNaPlikach.tworz("reut2-003.sgm");
+        }
+        if (pliki.contains("04")){
+            operacjeNaPlikach.tworz("reut2-004.sgm");
+        }
+        if (pliki.contains("05")){
+            operacjeNaPlikach.tworz("reut2-005.sgm");
+        }
+        if (pliki.contains("06")){
+            operacjeNaPlikach.tworz("reut2-006.sgm");
+        }
+        if (pliki.contains("07")){
+            operacjeNaPlikach.tworz("reut2-007.sgm");
+        }
+        if (pliki.contains("08")){
+            operacjeNaPlikach.tworz("reut2-008.sgm");
+        }
+        if (pliki.contains("09")){
+            operacjeNaPlikach.tworz("reut2-009.sgm");
+        }
+        if (pliki.contains("10")){
+            operacjeNaPlikach.tworz("reut2-010.sgm");
+        }
+        if (pliki.contains("11")){
+            operacjeNaPlikach.tworz("reut2-011.sgm");
+        }
+        if (pliki.contains("12")){
+            operacjeNaPlikach.tworz("reut2-012.sgm");
+        }
+        if (pliki.contains("13")){
+            operacjeNaPlikach.tworz("reut2-013.sgm");
+        }
+        if (pliki.contains("14")){
+            operacjeNaPlikach.tworz("reut2-014.sgm");
+        }
+        if (pliki.contains("15")){
+            operacjeNaPlikach.tworz("reut2-015.sgm");
+        }
+        if (pliki.contains("16")){
+            operacjeNaPlikach.tworz("reut2-016.sgm");
+        }
+        if (pliki.contains("17")){
+            operacjeNaPlikach.tworz("reut2-017.sgm");
+        }
+        if (pliki.contains("18")){
+            operacjeNaPlikach.tworz("reut2-018.sgm");
+        }
+        if (pliki.contains("19")){
+            operacjeNaPlikach.tworz("reut2-019.sgm");
+        }
+        if (pliki.contains("20")){
+            operacjeNaPlikach.tworz("reut2-020.sgm");
+        }
+        if (pliki.contains("21")){
+            operacjeNaPlikach.tworz("reut2-021.sgm");
         }
     }
 }
