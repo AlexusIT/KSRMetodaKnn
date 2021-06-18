@@ -14,6 +14,7 @@ public class Cechy {
     }
 
     void cecha1(Tekst tekst){
+        tekst.c1 = 1;
         ArrayList<String> slowaUnik = new ArrayList<>();
         ArrayList<Integer> liczbaWystSlowUnik = new ArrayList<>();
         for(int i = 0; i < tekst.listaSlow.size(); i++){
@@ -64,6 +65,7 @@ public class Cechy {
 
 
     void cecha2(Tekst tekst){
+        tekst.c2 = 1;
         for(int i=0; i<tekst.listaSlow.size(); i++){
             Pattern patMeter = Pattern.compile("Meter"); Matcher matMeter = patMeter.matcher(tekst.listaSlow.get(i));
             Pattern patMeters = Pattern.compile("Meters"); Matcher matMeters = patMeters.matcher(tekst.listaSlow.get(i));
@@ -90,6 +92,7 @@ public class Cechy {
         }
     }
     void cecha3(Tekst tekst){
+        tekst.c3 = 1;
         for(int i=0; i<tekst.listaSlow.size(); i++){
             if(tekst.listaSlow.get(i).equals("Celsius") || tekst.listaSlow.get(i).equals("celsius")){
                 tekst.licznikMiaryEuropa++;
@@ -103,6 +106,7 @@ public class Cechy {
         }
     }
     void cecha4(Tekst tekst){
+        tekst.c4 = 1;
         String EURO = "EURO";
         String EUR="EUR";
         String euro="euro";
@@ -152,6 +156,7 @@ public class Cechy {
     }
 
     void cecha5(Tekst tekst){
+        tekst.c5 = 1;
         for(int i = 0; i<tekst.listaSlow.size(); i++){
             ///EUROPA
             try {
@@ -223,10 +228,8 @@ public class Cechy {
         }
     }
 
-
-
-
     void cecha6(Tekst tekst){
+        tekst.c6 = 1;
         String[] literyFranc = {"á", "à", "â", "ć", "ç", "é", "è", "ê", "ë", "í", "î", "ï", "ó", "ô", "ö", "û", "ù", "ü", "ÿ"};
         String[] literyNiem = { "Ä", "ä", "Ö", "ö", "ẞ", "ß", "Ü", "ü",};
         for(int i = 0; i<tekst.listaSlow.size(); i++){
@@ -246,6 +249,7 @@ public class Cechy {
         }
     }
     void cecha7(Tekst tekst){
+        tekst.c7 = 1;
         //Japonia na koncu imienia/nazwiska
         String[] koncJPN = {"mi","ko","ato","uki","oki","shi","oto","abe","ito","chi","ura","oro","iro"};
         //Niemcy
@@ -282,6 +286,7 @@ public class Cechy {
         System.out.println("");
     }
     void cecha8(Tekst tekst){
+        tekst.c8 = 1;
         //Francja przed nazwiskiem
         String[] przedFRC = {"Le","le","La","la","Les","les","De","de","Du","du","Del","del","Dela","dela","Des","des"};
         //Niemieckie
@@ -307,6 +312,7 @@ public class Cechy {
         }
     }
     void cecha9(Tekst tekst){
+        tekst.c9 = 1;
         for(int i = 0; i < tekst.listaSlow.size(); i++){
             if(Character.isUpperCase(tekst.listaSlow.get(i).charAt(0))){
                 for(int j = 0; j<tekst.listaSlow.size(); j++){
@@ -320,6 +326,7 @@ public class Cechy {
         }
     }
     void cecha10(Tekst tekst){
+        tekst.c10 = 1;
         for(int i = 0; i < tekst.listaSlow.size(); i++){
             if(tekst.listaSlow.get(i).contains("?")){
                 tekst.licznikZapyt++;

@@ -4,30 +4,20 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+import static java.lang.Math.round;
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
         Cechy cechy = new Cechy();
         OperacjeNaPlikach operacjeNaPlikach = new OperacjeNaPlikach();
 	    operacjeNaPlikach.tworz("reut2-015.sgm");
-        //String kraj= "jprdl";
-        //String tekstt[] = "dwa euopa 1 YEN EUR in dwa in USD $ JPY";
-        //Tekst tekst = new Tekst(kraj,tekstt);
-        //cechy.cecha4(tekst);
-        for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
-            //cechy.cecha7(Kontenery.WszytkieTeksty.get(i));
-            //cechy.cecha2(Kontenery.WszytkieTeksty.get(i));
-            //cechy.cecha3(Kontenery.WszytkieTeksty.get(i));
-            //cechy.cecha4(Kontenery.WszytkieTeksty.get(i));
-        }
-
         menu(cechy);
-
     }
 
     static void menu(Cechy cechy) throws IOException {
         Scanner scan = new Scanner(System.in);
-        System.out.println("***MENU***\n1. Wczytaj pliki\n2. Wybierz cechy");
+        System.out.println("***MENU***\n1. Wczytaj pliki\n2. Wybierz cechy\n3. Podaj % zbiorow");
         int wyborMenu = Integer.parseInt(scan.nextLine());
 
         switch (wyborMenu) {
@@ -52,7 +42,26 @@ public class Main {
                 }*/
                 for (int i = 0; i < 50; ++i) System.out.println();
                 menu(cechy);
-
+            case 3:
+                System.out.println("Podaj procętową wartość podziału tekstu na zbiór uczący, reszta procent będzie odpowiadać za zbiór testowy");
+                String procent = scan.nextLine();
+                double proc = Integer.parseInt(procent);
+                if(proc > 0 && proc < 100){
+                    proc = proc / 100;
+                    double ilosc = Kontenery.WszytkieTeksty.size()*proc;
+                    ilosc = round(ilosc);
+                    for(int i = 0; i < Kontenery.WszytkieTeksty.size(); i++){
+                        if(i < ilosc){
+                            Kontenery.ZbiorTekstowUczacych.add(Kontenery.WszytkieTeksty.get(i));
+                        }
+                        else{
+                            Kontenery.ZbiorTekstowTestowych.add(Kontenery.WszytkieTeksty.get(i));
+                        }
+                    }
+                    System.out.println("Tekstow wszystkich: "+Kontenery.WszytkieTeksty.size()+ "\n"+
+                            "Tekstow uczących: "+ Kontenery.ZbiorTekstowUczacych.size() + "\n" +
+                            "Tekstow testowych: "+ Kontenery.ZbiorTekstowTestowych.size());
+                }
         }
     }
 
