@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class OperacjeNaPlikach {
-    void tworz(String nazwaPliku) throws FileNotFoundException {
+    public void wczytajPlik(String nazwaPliku) throws FileNotFoundException {
         File file = new File(nazwaPliku);
         boolean exists = file.exists();
         //System.out.println("Czy plik istnieje: " + exists);

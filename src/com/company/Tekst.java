@@ -21,7 +21,7 @@ public class Tekst {
     public int licznikMiaryTempAmeryka = 0;
     //cecha 4
     public int c4 = 0;
-    public int licznikEURO = 0;
+    public int licznikEUR = 0;
     public int licznikUSD = 0;
     public int licznikCAD = 0;
     public int licznikJPY = 0;

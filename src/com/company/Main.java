@@ -36,7 +36,7 @@ public class Main {
 
                 for (int i=0; i<10;i++){
                     if(zbiorCechString.contains(String.valueOf(i))) {
-                        wybranaCecha(i,cechy);
+                        wykonajCechy(i,cechy);
                     }
                 }
                 /*for(int j = 0; j<Kontenery.WszytkieTeksty.get(0).listaSlow.size(); j++){
@@ -69,7 +69,7 @@ public class Main {
         }
     }
 
-    static void wybranaCecha(int x, Cechy cechy){
+    static void wykonajCechy(int x, Cechy cechy){
         for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
               if(x==0){
                 cechy.cecha1(Kontenery.WszytkieTeksty.get(i));
@@ -101,70 +101,70 @@ public class Main {
 
 
         if (pliki.contains("00")){
-            operacjeNaPlikach.tworz("reut2-000.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-000.sgm");
         }
         if (pliki.contains("01")){
-            operacjeNaPlikach.tworz("reut2-001.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-001.sgm");
         }
         if (pliki.contains("02")){
-            operacjeNaPlikach.tworz("reut2-002.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-002.sgm");
         }
         if (pliki.contains("03")){
-            operacjeNaPlikach.tworz("reut2-003.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-003.sgm");
         }
         if (pliki.contains("04")){
-            operacjeNaPlikach.tworz("reut2-004.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-004.sgm");
         }
         if (pliki.contains("05")){
-            operacjeNaPlikach.tworz("reut2-005.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-005.sgm");
         }
         if (pliki.contains("06")){
-            operacjeNaPlikach.tworz("reut2-006.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-006.sgm");
         }
         if (pliki.contains("07")){
-            operacjeNaPlikach.tworz("reut2-007.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-007.sgm");
         }
         if (pliki.contains("08")){
-            operacjeNaPlikach.tworz("reut2-008.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-008.sgm");
         }
         if (pliki.contains("09")){
-            operacjeNaPlikach.tworz("reut2-009.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-009.sgm");
         }
         if (pliki.contains("10")){
-            operacjeNaPlikach.tworz("reut2-010.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-010.sgm");
         }
         if (pliki.contains("11")){
-            operacjeNaPlikach.tworz("reut2-011.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-011.sgm");
         }
         if (pliki.contains("12")){
-            operacjeNaPlikach.tworz("reut2-012.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-012.sgm");
         }
         if (pliki.contains("13")){
-            operacjeNaPlikach.tworz("reut2-013.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-013.sgm");
         }
         if (pliki.contains("14")){
-            operacjeNaPlikach.tworz("reut2-014.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-014.sgm");
         }
         if (pliki.contains("15")){
-            operacjeNaPlikach.tworz("reut2-015.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-015.sgm");
         }
         if (pliki.contains("16")){
-            operacjeNaPlikach.tworz("reut2-016.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-016.sgm");
         }
         if (pliki.contains("17")){
-            operacjeNaPlikach.tworz("reut2-017.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-017.sgm");
         }
         if (pliki.contains("18")){
-            operacjeNaPlikach.tworz("reut2-018.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-018.sgm");
         }
         if (pliki.contains("19")){
-            operacjeNaPlikach.tworz("reut2-019.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-019.sgm");
         }
         if (pliki.contains("20")){
-            operacjeNaPlikach.tworz("reut2-020.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-020.sgm");
         }
         if (pliki.contains("21")){
-            operacjeNaPlikach.tworz("reut2-021.sgm");
+            operacjeNaPlikach.wczytajPlik("reut2-021.sgm");
         }
     }
 }

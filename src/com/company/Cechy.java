@@ -1,6 +1,5 @@
 package com.company;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -13,7 +12,7 @@ public class Cechy {
     public Cechy() {
     }
 
-    void cecha1(Tekst tekst){
+    public void cecha1(Tekst tekst){
         tekst.c1 = 1;
         ArrayList<String> slowaUnik = new ArrayList<>();
         ArrayList<Integer> liczbaWystSlowUnik = new ArrayList<>();
@@ -64,7 +63,7 @@ public class Cechy {
 
 
 
-    void cecha2(Tekst tekst){
+    public void cecha2(Tekst tekst){
         tekst.c2 = 1;
         for(int i=0; i<tekst.listaSlow.size(); i++){
             Pattern patMeter = Pattern.compile("Meter"); Matcher matMeter = patMeter.matcher(tekst.listaSlow.get(i));
@@ -91,7 +90,7 @@ public class Cechy {
             System.out.println("ameryka = " + tekst.licznikMiaryAmeryka);
         }
     }
-    void cecha3(Tekst tekst){
+    public void cecha3(Tekst tekst){
         tekst.c3 = 1;
         for(int i=0; i<tekst.listaSlow.size(); i++){
             if(tekst.listaSlow.get(i).equals("Celsius") || tekst.listaSlow.get(i).equals("celsius")){
@@ -105,7 +104,7 @@ public class Cechy {
             }
         }
     }
-    void cecha4(Tekst tekst){
+    public void cecha4(Tekst tekst){
         tekst.c4 = 1;
         String EURO = "EURO";
         String EUR="EUR";
@@ -126,7 +125,7 @@ public class Cechy {
         String F="£";
         for(int i=0; i<tekst.listaSlow.size(); i++){
             if (tekst.listaSlow.get(i).contains(EURO)||tekst.listaSlow.get(i).contains(EUR)||tekst.listaSlow.get(i).endsWith(euro)||tekst.listaSlow.get(i).contains(E)){
-                tekst.licznikEURO++;
+                tekst.licznikEUR++;
                 break;
             }
             else if (tekst.listaSlow.get(i).contains(USD)||tekst.listaSlow.get(i).contains(usd)||tekst.listaSlow.get(i).contains(S)){
@@ -149,13 +148,13 @@ public class Cechy {
         /*for(int i=0; i<tekst.listaSlow.size(); i++){
             System.out.println(tekst.listaSlow.get(i));
         }*/
-        System.out.println("EUR: "+tekst.licznikEURO);
+        System.out.println("EUR: "+tekst.licznikEUR);
         System.out.println("  USA: " +tekst.licznikUSD);
         System.out.println("    JPN: " +tekst.licznikJPY);
         System.out.println("      CAD: " +tekst.licznikCAD);
     }
 
-    void cecha5(Tekst tekst){
+    public void cecha5(Tekst tekst){
         tekst.c5 = 1;
         for(int i = 0; i<tekst.listaSlow.size(); i++){
             ///EUROPA
@@ -227,7 +226,7 @@ public class Cechy {
         }
     }
 
-    void cecha6(Tekst tekst){
+    public void cecha6(Tekst tekst){
         tekst.c6 = 1;
         String[] literyFranc = {"á", "à", "â", "ć", "ç", "é", "è", "ê", "ë", "í", "î", "ï", "ó", "ô", "û", "ù", "ÿ"};
         String[] literyNiem = { "Ä", "ä", "Ö", "ö", "ẞ", "ß", "Ü", "ü",};
@@ -247,7 +246,7 @@ public class Cechy {
             }
         }
     }
-    void cecha7(Tekst tekst){
+    public void cecha7(Tekst tekst){
         tekst.c7 = 1;
         //Japonia na koncu imienia/nazwiska
         String[] koncJPN = {"mi","ko","ato","uki","oki","shi","oto","abe","ito","chi","ura","oro","iro"};
@@ -284,7 +283,7 @@ public class Cechy {
         System.out.println("LicznikJPN: "+ tekst.licznikKoncowekJPN);
         System.out.println("");
     }
-    void cecha8(Tekst tekst){
+    public void cecha8(Tekst tekst){
         tekst.c8 = 1;
         //Francja przed nazwiskiem
         String[] przedFRC = {"Le","le","La","la","Les","les","De","de","Du","du","Del","del","Dela","dela","Des","des"};
@@ -310,7 +309,7 @@ public class Cechy {
             }
         }
     }
-    void cecha9(Tekst tekst){
+    public void cecha9(Tekst tekst){
         tekst.c9 = 1;
         for(int i = 0; i < tekst.listaSlow.size(); i++){
             if(Character.isUpperCase(tekst.listaSlow.get(i).charAt(0))){
@@ -324,7 +323,7 @@ public class Cechy {
             }
         }
     }
-    void cecha10(Tekst tekst){
+    public void cecha10(Tekst tekst){
         tekst.c10 = 1;
         for(int i = 0; i < tekst.listaSlow.size(); i++){
             if(tekst.listaSlow.get(i).contains("?")){
@@ -339,7 +338,7 @@ public class Cechy {
             System.out.println("Liczba znakow wyk: " + tekst.licznikWykrzyk);
         }
     }
-    void dodawanieWykonanychCech(Tekst tekst){
+    public void dodawanieWykonanychCech(Tekst tekst){
         if(tekst.c1 == 1){
 
         }
@@ -352,7 +351,7 @@ public class Cechy {
             tekst.wynikiWykonanychCech.add(tekst.licznikMiaryTempAmeryka);
         }
         if(tekst.c4 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikEURO);
+            tekst.wynikiWykonanychCech.add(tekst.licznikEUR);
             tekst.wynikiWykonanychCech.add(tekst.licznikUSD);
             tekst.wynikiWykonanychCech.add(tekst.licznikCAD);
             tekst.wynikiWykonanychCech.add(tekst.licznikJPY);
@@ -382,6 +381,133 @@ public class Cechy {
         if(tekst.c10 == 1){
             tekst.wynikiWykonanychCech.add(tekst.licznikZapyt);
             tekst.wynikiWykonanychCech.add(tekst.licznikWykrzyk);
+        }
+    }
+    public void normalizacja(ArrayList<Tekst> teksty){
+        if(teksty.get(1).c1 == 1){
+
+        }
+        if(teksty.get(1).c2 == 1){
+            int licznikMEurMin = teksty.get(0).licznikMiaryEuropa;
+            int licznikMEurMax = teksty.get(0).licznikMiaryEuropa;
+            int licznikMAmerMin = teksty.get(0).licznikMiaryAmeryka;
+            int licznikMAmerMax = teksty.get(0).licznikMiaryAmeryka;
+            for(int i = 1 ; i < teksty.size(); i++){
+                if(teksty.get(i).licznikMiaryEuropa>licznikMEurMax){
+                    licznikMEurMax = teksty.get(i).licznikMiaryEuropa;
+                }
+                if(teksty.get(i).licznikMiaryEuropa<licznikMEurMin){
+                    licznikMEurMin = teksty.get(i).licznikMiaryEuropa;
+                }
+                if(teksty.get(i).licznikMiaryAmeryka>licznikMAmerMax){
+                    licznikMAmerMax = teksty.get(i).licznikMiaryAmeryka;
+                }
+                if(teksty.get(i).licznikMiaryAmeryka<licznikMAmerMin){
+                    licznikMAmerMin = teksty.get(i).licznikMiaryAmeryka;
+                }
+            }
+            for(int i = 1 ; i < teksty.size(); i++){
+                teksty.get(i).licznikMiaryEuropa = (teksty.get(i).licznikMiaryEuropa - licznikMEurMin) / licznikMEurMax;
+                teksty.get(i).licznikMiaryAmeryka = (teksty.get(i).licznikMiaryEuropa - licznikMAmerMin) / licznikMAmerMax;
+            }
+        }
+        if(teksty.get(1).c3 == 1){
+            int licznikMTEurMin = teksty.get(0).licznikMiaryTempEuropa;
+            int licznikMTEurMax = teksty.get(0).licznikMiaryTempAmeryka;
+            int licznikMTAmerMin = teksty.get(0).licznikMiaryTempAmeryka;
+            int licznikMTAmerMax = teksty.get(0).licznikMiaryAmeryka;
+            for(int i = 1 ; i < teksty.size(); i++){
+                if(teksty.get(i).licznikMiaryTempAmeryka>licznikMTEurMax){
+                    licznikMTEurMax = teksty.get(i).licznikMiaryTempAmeryka;
+                }
+                if(teksty.get(i).licznikMiaryTempAmeryka<licznikMTEurMin){
+                    licznikMTEurMin = teksty.get(i).licznikMiaryTempAmeryka;
+                }
+                if(teksty.get(i).licznikMiaryTempAmeryka>licznikMTAmerMax){
+                    licznikMTAmerMax = teksty.get(i).licznikMiaryTempAmeryka;
+                }
+                if(teksty.get(i).licznikMiaryTempAmeryka<licznikMTAmerMin){
+                    licznikMTAmerMin = teksty.get(i).licznikMiaryTempAmeryka;
+                }
+            }
+            for(int i = 1 ; i < teksty.size(); i++){
+                teksty.get(i).licznikMiaryTempEuropa = (teksty.get(i).licznikMiaryTempEuropa - licznikMTEurMin) / licznikMTEurMax;
+                teksty.get(i).licznikMiaryTempAmeryka = (teksty.get(i).licznikMiaryTempEuropa - licznikMTAmerMin) / licznikMTAmerMax;
+            }
+        }
+        if(teksty.get(1).c4 == 1){
+            int licznikEURMax = teksty.get(0).licznikEUR;
+            int licznikEURMin = teksty.get(0).licznikEUR;
+            int licznikUSDMax = teksty.get(0).licznikUSD;
+            int licznikUSDMin = teksty.get(0).licznikUSD;
+            int licznikCADMax = teksty.get(0).licznikCAD;
+            int licznikCADMin = teksty.get(0).licznikCAD;
+            int licznikJPYMax = teksty.get(0).licznikJPY;
+            int licznikJPYMin = teksty.get(0).licznikJPY;
+            int licznikGBPMax = teksty.get(0).licznikGBP;
+            int licznikGBPMin = teksty.get(0).licznikGBP;
+            for(int i = 1 ; i < teksty.size(); i++){
+                if(teksty.get(i).licznikEUR>licznikEURMax){
+                    licznikEURMax = teksty.get(i).licznikEUR;
+                }
+                if(teksty.get(i).licznikEUR<licznikEURMin){
+                    licznikEURMin = teksty.get(i).licznikEUR;
+                }
+                if(teksty.get(i).licznikUSD>licznikUSDMax){
+                    licznikUSDMax = teksty.get(i).licznikUSD;
+                }
+                if(teksty.get(i).licznikUSD<licznikUSDMin){
+                    licznikUSDMin = teksty.get(i).licznikUSD;
+                }
+                if(teksty.get(i).licznikCAD>licznikCADMax){
+                    licznikCADMax = teksty.get(i).licznikCAD;
+                }
+                if(teksty.get(i).licznikCAD<licznikCADMin){
+                    licznikCADMin = teksty.get(i).licznikCAD;
+                }
+                if(teksty.get(i).licznikJPY>licznikJPYMax){
+                    licznikJPYMax = teksty.get(i).licznikJPY;
+                }
+                if(teksty.get(i).licznikJPY<licznikJPYMin){
+                    licznikJPYMin = teksty.get(i).licznikJPY;
+                }
+                if(teksty.get(i).licznikGBP>licznikGBPMax){
+                    licznikGBPMax = teksty.get(i).licznikGBP;
+                }
+                if(teksty.get(i).licznikGBP<licznikGBPMin){
+                    licznikGBPMin = teksty.get(i).licznikGBP;
+                }
+            }
+        }
+        if(teksty.get(1).c5 == 1){
+            for(int i = 1 ; i < teksty.size(); i++){
+
+            }
+        }
+        if(teksty.get(1).c6 == 1){
+            for(int i = 1 ; i < teksty.size(); i++){
+
+            }
+        }
+        if(teksty.get(1).c7 == 1){
+            for(int i = 1 ; i < teksty.size(); i++){
+
+            }
+        }
+        if(teksty.get(1).c8 == 1){
+            for(int i = 1 ; i < teksty.size(); i++){
+
+            }
+        }
+        if(teksty.get(1).c9 == 1){
+            for(int i = 1 ; i < teksty.size(); i++){
+
+            }
+        }
+        if(teksty.get(1).c10 == 1){
+            for(int i = 1 ; i < teksty.size(); i++){
+
+            }
         }
 
     }
