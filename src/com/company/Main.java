@@ -60,10 +60,16 @@ public class Main {
                             Kontenery.ZbiorTekstowTestowych.add(Kontenery.WszytkieTeksty.get(i));
                         }
                     }
-                    for (int i = 0; i < 50; ++i) System.out.println();
                     System.out.println("Tekstow wszystkich: "+Kontenery.WszytkieTeksty.size()+ "\n"+
                             "Tekstow uczących: "+ Kontenery.ZbiorTekstowUczacych.size() + "\n" +
                             "Tekstow testowych: "+ Kontenery.ZbiorTekstowTestowych.size()+"\n");
+                    for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
+                        System.out.println(Kontenery.WszytkieTeksty.get(i).licznikZdan);
+                        System.out.println(Kontenery.WszytkieTeksty.get(i).licznikMiaryEuropa);
+                        System.out.println(Kontenery.WszytkieTeksty.get(i).licznikMiaryAmeryka);
+                        System.out.println("");
+                    }
+                    for (int i = 0; i < 50; ++i) System.out.println();
                     menu(cechy);
                 }
         }
@@ -92,8 +98,12 @@ public class Main {
             } if (x==9){
                 cechy.cecha10(Kontenery.WszytkieTeksty.get(i));
             }
+        }
+        cechy.normalizacja(Kontenery.WszytkieTeksty);
+        for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
             cechy.dodawanieWykonanychCech(Kontenery.WszytkieTeksty.get(i));
         }
+
     }
 
     static void wybranyPlik(String pliki) throws FileNotFoundException {

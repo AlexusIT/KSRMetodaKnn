@@ -339,48 +339,45 @@ public class Cechy {
         }
     }
     public void dodawanieWykonanychCech(Tekst tekst){
-        if(tekst.c1 == 1){
-
-        }
         if(tekst.c2 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikMiaryEuropa);
-            tekst.wynikiWykonanychCech.add(tekst.licznikMiaryAmeryka);
+            tekst.wynikiWywolanychCech.add(tekst.licznikMiaryEuropa);
+            tekst.wynikiWywolanychCech.add(tekst.licznikMiaryAmeryka);
         }
         if(tekst.c3 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikMiaryTempEuropa);
-            tekst.wynikiWykonanychCech.add(tekst.licznikMiaryTempAmeryka);
+            tekst.wynikiWywolanychCech.add(tekst.licznikMiaryTempEuropa);
+            tekst.wynikiWywolanychCech.add(tekst.licznikMiaryTempAmeryka);
         }
         if(tekst.c4 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikEUR);
-            tekst.wynikiWykonanychCech.add(tekst.licznikUSD);
-            tekst.wynikiWykonanychCech.add(tekst.licznikCAD);
-            tekst.wynikiWykonanychCech.add(tekst.licznikJPY);
-            tekst.wynikiWykonanychCech.add(tekst.licznikGBP);
+            tekst.wynikiWywolanychCech.add(tekst.licznikEUR);
+            tekst.wynikiWywolanychCech.add(tekst.licznikUSD);
+            tekst.wynikiWywolanychCech.add(tekst.licznikCAD);
+            tekst.wynikiWywolanychCech.add(tekst.licznikJPY);
+            tekst.wynikiWywolanychCech.add(tekst.licznikGBP);
         }
         if(tekst.c5 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikDataEuropa);
-            tekst.wynikiWykonanychCech.add(tekst.licznikDataAmeryka);
-            tekst.wynikiWykonanychCech.add(tekst.licznikDataJaponia);
+            tekst.wynikiWywolanychCech.add(tekst.licznikDataEuropa);
+            tekst.wynikiWywolanychCech.add(tekst.licznikDataAmeryka);
+            tekst.wynikiWywolanychCech.add(tekst.licznikDataJaponia);
         }
         if(tekst.c6 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikLiterFranc);
-            tekst.wynikiWykonanychCech.add(tekst.licznikLiterNiem);
+            tekst.wynikiWywolanychCech.add(tekst.licznikLiterFranc);
+            tekst.wynikiWywolanychCech.add(tekst.licznikLiterNiem);
         }
         if(tekst.c7 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikKoncowekUSACAN);
-            tekst.wynikiWykonanychCech.add(tekst.licznikKoncowekJPN);
-            tekst.wynikiWykonanychCech.add(tekst.licznikKoncowekGER);
+            tekst.wynikiWywolanychCech.add(tekst.licznikKoncowekUSACAN);
+            tekst.wynikiWywolanychCech.add(tekst.licznikKoncowekJPN);
+            tekst.wynikiWywolanychCech.add(tekst.licznikKoncowekGER);
         }
         if(tekst.c8 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikVON);
-            tekst.wynikiWykonanychCech.add(tekst.licznikFran);
+            tekst.wynikiWywolanychCech.add(tekst.licznikVON);
+            tekst.wynikiWywolanychCech.add(tekst.licznikFran);
         }
         if(tekst.c9 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikZdan);
+            tekst.wynikiWywolanychCech.add(tekst.licznikZdan);
         }
         if(tekst.c10 == 1){
-            tekst.wynikiWykonanychCech.add(tekst.licznikZapyt);
-            tekst.wynikiWykonanychCech.add(tekst.licznikWykrzyk);
+            tekst.wynikiWywolanychCech.add(tekst.licznikZapyt);
+            tekst.wynikiWywolanychCech.add(tekst.licznikWykrzyk);
         }
     }
     public void normalizacja(ArrayList<Tekst> teksty){
@@ -388,10 +385,10 @@ public class Cechy {
 
         }
         if(teksty.get(1).c2 == 1){
-            int licznikMEurMin = teksty.get(0).licznikMiaryEuropa;
-            int licznikMEurMax = teksty.get(0).licznikMiaryEuropa;
-            int licznikMAmerMin = teksty.get(0).licznikMiaryAmeryka;
-            int licznikMAmerMax = teksty.get(0).licznikMiaryAmeryka;
+            float licznikMEurMin = teksty.get(0).licznikMiaryEuropa;
+            float licznikMEurMax = teksty.get(0).licznikMiaryEuropa;
+            float licznikMAmerMin = teksty.get(0).licznikMiaryAmeryka;
+            float licznikMAmerMax = teksty.get(0).licznikMiaryAmeryka;
             for(int i = 1 ; i < teksty.size(); i++){
                 if(teksty.get(i).licznikMiaryEuropa>licznikMEurMax){
                     licznikMEurMax = teksty.get(i).licznikMiaryEuropa;
@@ -412,10 +409,10 @@ public class Cechy {
             }
         }
         if(teksty.get(1).c3 == 1){
-            int licznikMTEurMin = teksty.get(0).licznikMiaryTempEuropa;
-            int licznikMTEurMax = teksty.get(0).licznikMiaryTempAmeryka;
-            int licznikMTAmerMin = teksty.get(0).licznikMiaryTempAmeryka;
-            int licznikMTAmerMax = teksty.get(0).licznikMiaryAmeryka;
+            float licznikMTEurMin = teksty.get(0).licznikMiaryTempEuropa;
+            float licznikMTEurMax = teksty.get(0).licznikMiaryTempAmeryka;
+            float licznikMTAmerMin = teksty.get(0).licznikMiaryTempAmeryka;
+            float licznikMTAmerMax = teksty.get(0).licznikMiaryAmeryka;
             for(int i = 1 ; i < teksty.size(); i++){
                 if(teksty.get(i).licznikMiaryTempAmeryka>licznikMTEurMax){
                     licznikMTEurMax = teksty.get(i).licznikMiaryTempAmeryka;
@@ -436,16 +433,16 @@ public class Cechy {
             }
         }
         if(teksty.get(1).c4 == 1){
-            int licznikEURMax = teksty.get(0).licznikEUR;
-            int licznikEURMin = teksty.get(0).licznikEUR;
-            int licznikUSDMax = teksty.get(0).licznikUSD;
-            int licznikUSDMin = teksty.get(0).licznikUSD;
-            int licznikCADMax = teksty.get(0).licznikCAD;
-            int licznikCADMin = teksty.get(0).licznikCAD;
-            int licznikJPYMax = teksty.get(0).licznikJPY;
-            int licznikJPYMin = teksty.get(0).licznikJPY;
-            int licznikGBPMax = teksty.get(0).licznikGBP;
-            int licznikGBPMin = teksty.get(0).licznikGBP;
+            float licznikEURMax = teksty.get(0).licznikEUR;
+            float licznikEURMin = teksty.get(0).licznikEUR;
+            float licznikUSDMax = teksty.get(0).licznikUSD;
+            float licznikUSDMin = teksty.get(0).licznikUSD;
+            float licznikCADMax = teksty.get(0).licznikCAD;
+            float licznikCADMin = teksty.get(0).licznikCAD;
+            float licznikJPYMax = teksty.get(0).licznikJPY;
+            float licznikJPYMin = teksty.get(0).licznikJPY;
+            float licznikGBPMax = teksty.get(0).licznikGBP;
+            float licznikGBPMin = teksty.get(0).licznikGBP;
             for(int i = 1 ; i < teksty.size(); i++){
                 if(teksty.get(i).licznikEUR>licznikEURMax){
                     licznikEURMax = teksty.get(i).licznikEUR;
@@ -478,37 +475,166 @@ public class Cechy {
                     licznikGBPMin = teksty.get(i).licznikGBP;
                 }
             }
+            for(int i = 1 ; i < teksty.size(); i++){
+                teksty.get(i).licznikEUR = (teksty.get(0).licznikEUR - licznikEURMin) / licznikEURMax;
+                teksty.get(i).licznikUSD = (teksty.get(0).licznikUSD - licznikUSDMin) / licznikUSDMax;
+                teksty.get(i).licznikCAD = (teksty.get(0).licznikCAD - licznikCADMin) / licznikCADMax;
+                teksty.get(i).licznikJPY = (teksty.get(0).licznikJPY - licznikJPYMin) / licznikJPYMax;
+                teksty.get(i).licznikGBP = (teksty.get(0).licznikGBP - licznikGBPMin) / licznikGBPMax;
+            }
         }
         if(teksty.get(1).c5 == 1){
+            float licznikDataAmerykaMax = teksty.get(0).licznikDataAmeryka;
+            float licznikDataAmerykaMin = teksty.get(0).licznikDataAmeryka;
+            float licznikDataEuropaMax = teksty.get(0).licznikDataEuropa;
+            float licznikDataEuropaMin = teksty.get(0).licznikDataEuropa;
+            float licznikDataJaponiaMax = teksty.get(0).licznikDataJaponia;
+            float licznikDataJaponiaMin = teksty.get(0).licznikDataJaponia;
             for(int i = 1 ; i < teksty.size(); i++){
-
+                if(teksty.get(i).licznikDataAmeryka>licznikDataAmerykaMax){
+                    licznikDataAmerykaMax = teksty.get(i).licznikDataAmeryka;
+                }
+                if(teksty.get(i).licznikDataAmeryka<licznikDataAmerykaMin){
+                    licznikDataAmerykaMin = teksty.get(i).licznikDataAmeryka;
+                }
+                if(teksty.get(i).licznikDataEuropa>licznikDataEuropaMax){
+                    licznikDataEuropaMax = teksty.get(i).licznikDataEuropa;
+                }
+                if(teksty.get(i).licznikDataEuropa<licznikDataEuropaMin){
+                    licznikDataEuropaMin = teksty.get(i).licznikDataEuropa;
+                }
+                if(teksty.get(i).licznikDataJaponia>licznikDataJaponiaMax){
+                    licznikDataJaponiaMax = teksty.get(i).licznikDataJaponia;
+                }
+                if(teksty.get(i).licznikDataJaponia<licznikDataJaponiaMin){
+                    licznikDataJaponiaMin = teksty.get(i).licznikDataJaponia;
+                }
+            }
+            for(int i = 1 ; i < teksty.size(); i++){
+                teksty.get(i).licznikDataAmeryka = (teksty.get(i).licznikDataAmeryka - licznikDataAmerykaMin) / licznikDataAmerykaMax;
+                teksty.get(i).licznikDataEuropa = (teksty.get(i).licznikDataEuropa - licznikDataEuropaMin) / licznikDataEuropaMax;
+                teksty.get(i).licznikDataJaponia = (teksty.get(i).licznikDataJaponia - licznikDataJaponiaMin) / licznikDataJaponiaMax;
             }
         }
         if(teksty.get(1).c6 == 1){
+            float licznikLiterFrancMax = teksty.get(0).licznikLiterFranc;
+            float licznikLiterFrancMin = teksty.get(0).licznikLiterFranc;
+            float licznikLiterNiemMax = teksty.get(0).licznikLiterNiem;
+            float licznikLiterNiemMin = teksty.get(0).licznikLiterNiem;
             for(int i = 1 ; i < teksty.size(); i++){
-
+                if(teksty.get(i).licznikLiterFranc>licznikLiterFrancMax){
+                    licznikLiterFrancMax = teksty.get(i).licznikLiterFranc;
+                }
+                if(teksty.get(i).licznikLiterFranc<licznikLiterFrancMin){
+                    licznikLiterFrancMin = teksty.get(i).licznikLiterFranc;
+                }
+                if(teksty.get(i).licznikLiterNiem>licznikLiterNiemMax){
+                    licznikLiterNiemMax = teksty.get(i).licznikLiterNiem;
+                }
+                if(teksty.get(i).licznikLiterNiem<licznikLiterNiemMin){
+                    licznikLiterNiemMin = teksty.get(i).licznikLiterNiem;
+                }
+            }
+            for(int i = 1 ; i < teksty.size(); i++){
+                teksty.get(i).licznikLiterNiem = (teksty.get(i).licznikLiterNiem - licznikLiterNiemMin) / licznikLiterNiemMax;
+                teksty.get(i).licznikLiterFranc = (teksty.get(i).licznikLiterFranc - licznikLiterFrancMin) / licznikLiterFrancMax;
             }
         }
         if(teksty.get(1).c7 == 1){
+            float licznikKoncowekUSACANMax = teksty.get(0).licznikKoncowekUSACAN;
+            float licznikKoncowekUSACANMin = teksty.get(0).licznikKoncowekUSACAN;
+            float licznikKoncowekJPNMax = teksty.get(0).licznikKoncowekJPN;
+            float licznikKoncowekJPNMin = teksty.get(0).licznikKoncowekJPN;
+            float licznikKoncowekGERMax = teksty.get(0).licznikKoncowekGER;
+            float licznikKoncowekGERMin = teksty.get(0).licznikKoncowekGER;
             for(int i = 1 ; i < teksty.size(); i++){
-
+                if(teksty.get(i).licznikKoncowekUSACAN>licznikKoncowekUSACANMax){
+                    licznikKoncowekUSACANMax = teksty.get(i).licznikKoncowekUSACAN;
+                }
+                if(teksty.get(i).licznikKoncowekUSACAN<licznikKoncowekUSACANMin){
+                    licznikKoncowekUSACANMin = teksty.get(i).licznikKoncowekUSACAN;
+                }
+                if(teksty.get(i).licznikKoncowekJPN>licznikKoncowekJPNMax){
+                    licznikKoncowekJPNMax = teksty.get(i).licznikKoncowekJPN;
+                }
+                if(teksty.get(i).licznikKoncowekJPN<licznikKoncowekJPNMin){
+                    licznikKoncowekJPNMin = teksty.get(i).licznikKoncowekJPN;
+                }
+                if(teksty.get(i).licznikKoncowekGER>licznikKoncowekGERMax){
+                    licznikKoncowekGERMax = teksty.get(i).licznikKoncowekGER;
+                }
+                if(teksty.get(i).licznikKoncowekGER<licznikKoncowekGERMin){
+                    licznikKoncowekGERMin = teksty.get(i).licznikKoncowekGER;
+                }
+            }
+            for(int i = 1 ; i < teksty.size(); i++){
+                teksty.get(i).licznikKoncowekUSACAN = (teksty.get(i).licznikKoncowekUSACAN - licznikKoncowekUSACANMin) / licznikKoncowekUSACANMax;
+                teksty.get(i).licznikKoncowekJPN = (teksty.get(i).licznikKoncowekJPN - licznikKoncowekJPNMin) / licznikKoncowekJPNMax;
+                teksty.get(i).licznikKoncowekGER = (teksty.get(i).licznikKoncowekGER - licznikKoncowekGERMin) / licznikKoncowekGERMax;
             }
         }
         if(teksty.get(1).c8 == 1){
+            float licznikVONMax = teksty.get(0).licznikVON;
+            float licznikVONMin = teksty.get(0).licznikVON;
+            float licznikFranMax = teksty.get(0).licznikFran;
+            float licznikFranMin = teksty.get(0).licznikFran;
             for(int i = 1 ; i < teksty.size(); i++){
-
+                if(teksty.get(i).licznikVON>licznikVONMax){
+                    licznikVONMax = teksty.get(i).licznikVON;
+                }
+                if(teksty.get(i).licznikVON<licznikVONMin){
+                    licznikVONMin = teksty.get(i).licznikVON;
+                }
+                if(teksty.get(i).licznikFran>licznikFranMax){
+                    licznikFranMax = teksty.get(i).licznikFran;
+                }
+                if(teksty.get(i).licznikFran<licznikFranMin){
+                    licznikFranMin = teksty.get(i).licznikFran;
+                }
+            }
+            for(int i = 1 ; i < teksty.size(); i++){
+                teksty.get(i).licznikVON = (teksty.get(i).licznikVON - licznikVONMin) / licznikVONMax;
+                teksty.get(i).licznikFran = (teksty.get(i).licznikFran - licznikFranMin) / licznikFranMax;
             }
         }
         if(teksty.get(1).c9 == 1){
+            float licznikZdanMax = teksty.get(0).licznikZdan;
+            float licznikZdanMin = teksty.get(0).licznikZdan;
             for(int i = 1 ; i < teksty.size(); i++){
-
+                if(teksty.get(i).licznikZdan>licznikZdanMax){
+                    licznikZdanMax = teksty.get(i).licznikZdan;
+                }
+                if(teksty.get(i).licznikZdan<licznikZdanMin){
+                    licznikZdanMin = teksty.get(i).licznikZdan;
+                }
+            }
+            for(int i = 1 ; i < teksty.size(); i++){
+                teksty.get(i).licznikZdan = (teksty.get(i).licznikZdan - licznikZdanMin) / licznikZdanMax;
             }
         }
         if(teksty.get(1).c10 == 1){
+            float licznikZapytMax = teksty.get(0).licznikZapyt;
+            float licznikZapytMin = teksty.get(0).licznikZapyt;
+            float licznikWykrzykMax = teksty.get(0).licznikWykrzyk;
+            float licznikWykrzykMin = teksty.get(0).licznikWykrzyk;
+            for(int i = 1 ; i< teksty.size(); i++){
+                if(teksty.get(i).licznikZapyt>licznikZapytMax){
+                    licznikZapytMax = teksty.get(i).licznikZapyt;
+                }
+                if(teksty.get(i).licznikZapyt<licznikZapytMin){
+                    licznikZapytMin = teksty.get(i).licznikZapyt;
+                }
+                if(teksty.get(i).licznikWykrzyk>licznikWykrzykMax){
+                    licznikWykrzykMax = teksty.get(i).licznikWykrzyk;
+                }
+                if(teksty.get(i).licznikWykrzyk<licznikWykrzykMin){
+                    licznikWykrzykMin = teksty.get(i).licznikWykrzyk;
+                }
+            }
             for(int i = 1 ; i < teksty.size(); i++){
-
+                teksty.get(i).licznikZapyt = (teksty.get(i).licznikZapyt - licznikZapytMin) / licznikZapytMax;
+                teksty.get(i).licznikWykrzyk = (teksty.get(i).licznikWykrzyk - licznikWykrzykMin) / licznikWykrzykMax;
             }
         }
-
     }
 }
