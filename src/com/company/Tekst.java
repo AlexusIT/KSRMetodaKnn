@@ -7,9 +7,11 @@ public class Tekst {
     String sklasyfikowanyKraj;
     ArrayList<String> listaSlow = new ArrayList<>();
     ArrayList<Float> wynikiWywolanychCech = new ArrayList<>();
+    ArrayList<Float> odleglosciOdTekstowUczacych = new ArrayList<>();
     //cecha 1
     public int c1 = 0;
     public ArrayList<String> listaUnikSlow= new ArrayList<>();
+    public String wszystkieSlowa = "qwerty";
     public ArrayList<Integer> listaWystUnikSlow= new ArrayList<>();
     //cecha 2
     public int c2 = 0;

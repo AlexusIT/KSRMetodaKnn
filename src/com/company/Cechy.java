@@ -55,14 +55,17 @@ public class Cechy {
         tekst.listaUnikSlow = najSlowa;
         tekst.listaWystUnikSlow = liczbNajSlowa;
         for(int i = 0; i < tekst.listaUnikSlow.size(); i++){
+            if(tekst.wszystkieSlowa.equals("qwerty")){
+                tekst.wszystkieSlowa = tekst.listaUnikSlow.get(i);
+            }
+            else{
+                tekst.wszystkieSlowa = tekst.wszystkieSlowa + tekst.listaUnikSlow.get(i);
+            }
             System.out.println(tekst.listaUnikSlow.get(i)+ ": "+tekst.listaWystUnikSlow.get(i));
         }
+        System.out.println(tekst.wszystkieSlowa);
         System.out.println("\n NOWY TEKST");
     }
-
-
-
-
     public void cecha2(Tekst tekst){
         tekst.c2 = 1;
         for(int i=0; i<tekst.listaSlow.size(); i++){

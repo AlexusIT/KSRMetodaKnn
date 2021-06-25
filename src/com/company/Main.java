@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.lang.Math.round;
@@ -70,6 +71,14 @@ public class Main {
                         System.out.println("");
                     }
                     for (int i = 0; i < 50; ++i) System.out.println();
+                    Knn knn = new Knn();
+                    String test2 = "aleks dasdasda,1321,ds12das  asdsad";
+                    String test1 = "1321aler";
+                    Tekst tekst1 = new Tekst("asd", null);
+                    Tekst tekst2 = new Tekst("das", null);
+                    tekst1.wszystkieSlowa = test1;
+                    tekst2.wszystkieSlowa = test2;
+                    knn.nGram(tekst1,tekst2);
                     menu(cechy);
                 }
         }
