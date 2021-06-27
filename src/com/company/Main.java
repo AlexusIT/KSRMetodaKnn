@@ -2,8 +2,7 @@ package com.company;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.Math.round;
 
@@ -18,7 +17,7 @@ public class Main {
 
     static void menu(Cechy cechy) throws IOException {
         Scanner scan = new Scanner(System.in);
-        System.out.println("***MENU***\n1. Wczytaj pliki\n2. Wybierz cechy\n3. Podaj % zbiorow");
+        System.out.println("***MENU***\n1. Wczytaj pliki\n2. Wybierz cechy\n3. Podaj % \n4. Wybierz metrykę");
         int wyborMenu = Integer.parseInt(scan.nextLine());
 
         switch (wyborMenu) {
@@ -40,11 +39,13 @@ public class Main {
                         wykonajCechy(i,cechy);
                     }
                 }
-                /*for(int j = 0; j<Kontenery.WszytkieTeksty.get(0).listaSlow.size(); j++){
-                    System.out.print(Kontenery.WszytkieTeksty.get(0).listaSlow.get(j)+" ");
-                }*/
+                cechy.normalizacja(Kontenery.WszytkieTeksty);
+                for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
+                    cechy.dodawanieWykonanychCech(Kontenery.WszytkieTeksty.get(i));
+                }
                 for (int i = 0; i < 50; ++i) System.out.println();
                 menu(cechy);
+                break;
             case 3:
                 System.out.println("Podaj procętową wartość podziału tekstu na zbiór uczący, reszta procent będzie odpowiadać za zbiór testowy");
                 String procent = scan.nextLine();
@@ -54,7 +55,7 @@ public class Main {
                     double ilosc = Kontenery.WszytkieTeksty.size()*proc;
                     ilosc = round(ilosc);
                     for(int i = 0; i < Kontenery.WszytkieTeksty.size(); i++){
-                        if(i < ilosc){
+                        if(i%2==0 && i < (ilosc * 2)){
                             Kontenery.ZbiorTekstowUczacych.add(Kontenery.WszytkieTeksty.get(i));
                         }
                         else{
@@ -64,26 +65,26 @@ public class Main {
                     System.out.println("Tekstow wszystkich: "+Kontenery.WszytkieTeksty.size()+ "\n"+
                             "Tekstow uczących: "+ Kontenery.ZbiorTekstowUczacych.size() + "\n" +
                             "Tekstow testowych: "+ Kontenery.ZbiorTekstowTestowych.size()+"\n");
-                    for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
-                        System.out.println(Kontenery.WszytkieTeksty.get(i).licznikZdan);
-                        System.out.println(Kontenery.WszytkieTeksty.get(i).licznikMiaryEuropa);
-                        System.out.println(Kontenery.WszytkieTeksty.get(i).licznikMiaryAmeryka);
-                        System.out.println("");
-                    }
                     for (int i = 0; i < 50; ++i) System.out.println();
-                    Knn knn = new Knn();
-                    String test2 = "aleks dasdasda,1321,ds12das  asdsad";
-                    String test1 = "1321aler";
-                    Tekst tekst1 = new Tekst("asd", null);
-                    Tekst tekst2 = new Tekst("das", null);
-                    tekst1.wszystkieSlowa = test1;
-                    tekst2.wszystkieSlowa = test2;
-                    knn.nGram(tekst1,tekst2);
                     menu(cechy);
+                    break;
                 }
+            case 4:
+                System.out.println("Wybierz metrykę");
+                System.out.println("Eulidesa -> '1'\nCzybyszewa -> '2'\nManhattan -> '3'");
+                String metryka = scan.nextLine();
+                Knn knn = new Knn();
+                if(metryka.equals("1")){
+                    knn.miaraEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych);
+                }
+                for (int i = 0; i<Kontenery.ZbiorTekstowTestowych.size(); i++){
+                    System.out.println(Kontenery.ZbiorTekstowTestowych.get(i).odleglosciOdTekstowUczacych);
+                }
+                for (int i = 0; i < 50; ++i) System.out.println();
+                menu(cechy);
+                break;
         }
     }
-
     static void wykonajCechy(int x, Cechy cechy){
         for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
               if(x==0){
@@ -108,17 +109,10 @@ public class Main {
                 cechy.cecha10(Kontenery.WszytkieTeksty.get(i));
             }
         }
-        cechy.normalizacja(Kontenery.WszytkieTeksty);
-        for(int i = 0; i< Kontenery.WszytkieTeksty.size(); i++){
-            cechy.dodawanieWykonanychCech(Kontenery.WszytkieTeksty.get(i));
-        }
-
     }
 
     static void wybranyPlik(String pliki) throws FileNotFoundException {
         OperacjeNaPlikach operacjeNaPlikach = new OperacjeNaPlikach();
-
-
         if (pliki.contains("00")){
             operacjeNaPlikach.wczytajPlik("reut2-000.sgm");
         }
