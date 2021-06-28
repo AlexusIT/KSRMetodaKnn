@@ -1,13 +1,18 @@
 package com.company;
 
+
+
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tekst {
     String kraj;
     String sklasyfikowanyKraj;
     ArrayList<String> listaSlow = new ArrayList<>();
     ArrayList<Double> wynikiWywolanychCech = new ArrayList<>();
-    ArrayList<Double> odleglosciOdTekstowUczacych = new ArrayList<>();
+    ArrayList<Mapa> odleglosciOdTekstowUczacych = new ArrayList<>();
+    public List<Mapa> kNajblizszychTekstow;
     //cecha 1
     public int c1 = 0;
     public ArrayList<String> listaUnikSlow= new ArrayList<>();

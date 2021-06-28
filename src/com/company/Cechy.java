@@ -343,11 +343,8 @@ public class Cechy {
     }
     public void dodawanieWykonanychCech(Tekst tekst){
         if(tekst.c2 == 1){
-            double c22 = tekst.licznikMiaryEuropa;
-            double c222 = tekst.licznikMiaryAmeryka;
-            System.out.println("XXXXXXXXXXXXX: "+ tekst.licznikMiaryEuropa);
-            tekst.wynikiWywolanychCech.add(c22);
-            tekst.wynikiWywolanychCech.add(c222);
+            tekst.wynikiWywolanychCech.add(tekst.licznikMiaryEuropa);
+            tekst.wynikiWywolanychCech.add(tekst.licznikMiaryAmeryka);
         }
         if(tekst.c3 == 1){
             tekst.wynikiWywolanychCech.add(tekst.licznikMiaryTempEuropa);
