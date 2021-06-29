@@ -72,16 +72,76 @@ public class Main {
                 System.out.println("Eulidesa -> '1'\nCzybyszewa -> '2'\nManhattan -> '3'");
                 String metryka = scan.nextLine();
                 Knn knn = new Knn();
+                MiaryJakosci miary = new MiaryJakosci();
                 if(metryka.equals("1")){
-                    knn.metrykaEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,200);
+                    knn.metrykaEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,3);
                 }
                 if(metryka.equals("2")){
-                    knn.metrykaCzybyszewa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,200);
+                    knn.metrykaCzybyszewa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,3);
                 }
                 if(metryka.equals("3")){
-                    knn.metrykaManhattan(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,200);
+                    knn.metrykaManhattan(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,3);
                 }
                 knn.klasyfikacja(Kontenery.ZbiorTekstowTestowych);
+                System.out.println("Accuracy:");
+                System.out.println("Wszystkie: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"x"));
+                System.out.println("");
+                System.out.println("usa: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"usa"));
+                System.out.println("");
+                System.out.println("canada: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"canada"));
+                System.out.println("");
+                System.out.println("west-germany: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"west-germany"));
+                System.out.println("");
+                System.out.println("france: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"france"));
+                System.out.println("");
+                System.out.println("uk: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"uk"));
+                System.out.println("");
+                System.out.println("japan: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"japan"));
+
+                System.out.println("Precision:");
+                System.out.println("Wszystkie: "+miary.precision(Kontenery.ZbiorTekstowTestowych,"x"));
+                System.out.println("");
+                System.out.println("usa: "+miary.precision(Kontenery.ZbiorTekstowTestowych,"usa"));
+                System.out.println("");
+                System.out.println("canada: "+miary.precision(Kontenery.ZbiorTekstowTestowych,"canada"));
+                System.out.println("");
+                System.out.println("west-germany: "+miary.precision(Kontenery.ZbiorTekstowTestowych,"west-germany"));
+                System.out.println("");
+                System.out.println("france: "+miary.precision(Kontenery.ZbiorTekstowTestowych,"france"));
+                System.out.println("");
+                System.out.println("uk: "+miary.precision(Kontenery.ZbiorTekstowTestowych,"uk"));
+                System.out.println("");
+                System.out.println("japan: "+miary.precision(Kontenery.ZbiorTekstowTestowych,"japan"));
+
+                System.out.println("Recall:");
+                System.out.println("Wszystkie: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"recall"));
+                System.out.println("");
+                System.out.println("usa: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"usa")/100);
+                System.out.println("");
+                System.out.println("canada: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"canada")/100);
+                System.out.println("");
+                System.out.println("west-germany: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"west-germany")/100);
+                System.out.println("");
+                System.out.println("france: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"france")/100);
+                System.out.println("");
+                System.out.println("uk: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"uk")/100);
+                System.out.println("");
+                System.out.println("japan: "+miary.accuracy(Kontenery.ZbiorTekstowTestowych,"japan")/100);
+
+                System.out.println("F1:");
+                System.out.println("Wszystkie: "+miary.f1(Kontenery.ZbiorTekstowTestowych,"x"));
+                System.out.println("");
+                System.out.println("usa: "+miary.f1(Kontenery.ZbiorTekstowTestowych,"usa"));
+                System.out.println("");
+                System.out.println("canada: "+miary.f1(Kontenery.ZbiorTekstowTestowych,"canada"));
+                System.out.println("");
+                System.out.println("west-germany: "+miary.f1(Kontenery.ZbiorTekstowTestowych,"west-germany"));
+                System.out.println("");
+                System.out.println("france: "+miary.f1(Kontenery.ZbiorTekstowTestowych,"france"));
+                System.out.println("");
+                System.out.println("uk: "+miary.f1(Kontenery.ZbiorTekstowTestowych,"uk"));
+                System.out.println("");
+                System.out.println("japan: "+miary.f1(Kontenery.ZbiorTekstowTestowych,"japan"));
                 /*for (int i = 0; i<Kontenery.ZbiorTekstowTestowych.size(); i++){
                     System.out.println("Nowy tekst: "+Kontenery.ZbiorTekstowTestowych.get(i).kraj);
                     for(int j = 0; j<Kontenery.ZbiorTekstowTestowych.get(i).odleglosciOdTekstowUczacych.size(); j++){
