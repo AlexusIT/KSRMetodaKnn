@@ -1,7 +1,11 @@
 package com.company;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
+
+import static java.util.Arrays.sort;
+import static java.util.Arrays.stream;
 
 public class Knn {
     public Knn() {
@@ -113,6 +117,92 @@ public class Knn {
                 tekstT.get(i).odleglosciOdTekstowUczacych.add(mapa);
             }
             tekstT.get(i).kNajblizszychTekstow = tekstT.get(i).odleglosciOdTekstowUczacych.stream().sorted(Comparator.comparing(Mapa::getOdległosc)).limit(K).collect(Collectors.toList());
+        }
+    }
+    public void klasyfikacja(ArrayList<Tekst> tekstT){
+        for (int i = 0; i < tekstT.size(); i++) {
+            ArrayList<Integer> kraje = new ArrayList<>();
+            kraje.add(0);kraje.add(0);kraje.add(0);kraje.add(0);kraje.add(0);kraje.add(0);
+            int usa = 0;
+            int canada = 0;
+            int germany = 0;
+            int uk = 0;
+            int france = 0;
+            int japan = 0;
+
+            ArrayList<Mapa> krajDoPrzypisania = new ArrayList<>();
+            Mapa mapUsa = new Mapa(0,"usa");
+            Mapa mapCanada = new Mapa(0,"canada");
+            Mapa mapGermany = new Mapa(0,"west-germany");
+            Mapa mapUk = new Mapa(0,"uk");
+            Mapa mapFrance = new Mapa(0,"france");
+            Mapa mapJapan = new Mapa(0,"japan");
+
+            for (int j = 0; j < tekstT.get(i).kNajblizszychTekstow.size(); j++) {
+                if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("usa")){
+                    kraje.set(0,kraje.get(0)+1);
+                    usa++;
+                    mapUsa.odległosc++;
+                }
+                else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("canada")){
+                    kraje.set(1,kraje.get(1)+1);
+                    canada++;
+                    mapCanada.odległosc++;
+                }
+                else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("west-germany")){
+                    kraje.set(2,kraje.get(2)+1);
+                    germany++;
+                    mapGermany.odległosc++;
+                }
+                else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("uk")){
+                    kraje.set(3,kraje.get(3)+1);
+                    uk++;
+                    mapUk.odległosc++;
+                }
+                else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("france")){
+                    kraje.set(4,kraje.get(4)+1);
+                    france++;
+                    mapFrance.odległosc++;
+                }
+                else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("japan")){
+                    kraje.set(5,kraje.get(5)+1);
+                    japan++;
+                    mapJapan.odległosc++;
+                }
+            }
+            krajDoPrzypisania.add(mapUsa);krajDoPrzypisania.add(mapCanada);krajDoPrzypisania.add(mapGermany);
+            krajDoPrzypisania.add(mapUk);krajDoPrzypisania.add(mapFrance);krajDoPrzypisania.add(mapJapan);
+            List<Mapa> krajePoSorcie = krajDoPrzypisania.stream().sorted(Comparator.comparing(Mapa::getOdległosc)).limit(6).collect(Collectors.toList());
+
+            int randomNum = 0;
+            int wskaznikRand = 0;
+            if(krajePoSorcie.get(5).odległosc==krajePoSorcie.get(4).odległosc){
+                    wskaznikRand = 1;
+                    randomNum = ThreadLocalRandom.current().nextInt(4,6);
+                if(krajePoSorcie.get(5).odległosc==krajePoSorcie.get(3).odległosc){
+                    randomNum = ThreadLocalRandom.current().nextInt(3,6);
+                    if(krajePoSorcie.get(5).odległosc==krajePoSorcie.get(2).odległosc){
+                        randomNum = ThreadLocalRandom.current().nextInt(2,6);
+                        if(krajePoSorcie.get(5).odległosc==krajePoSorcie.get(1).odległosc){
+                            randomNum = ThreadLocalRandom.current().nextInt(1,6);
+                            if(krajePoSorcie.get(5).odległosc==krajePoSorcie.get(0).odległosc){
+                                randomNum = ThreadLocalRandom.current().nextInt(0,6);
+                            }
+                        }
+                    }
+                }
+            }
+            if(wskaznikRand == 1){
+                tekstT.get(i).sklasyfikowanyKraj=krajePoSorcie.get(randomNum).kraj;
+            }
+            else{
+                tekstT.get(i).sklasyfikowanyKraj=krajePoSorcie.get(5).kraj;
+            }
+            System.out.println("Randomowa cyfra: "+randomNum + "| Kraj/Sklasyfikowany :"+tekstT.get(i).kraj+"/"+tekstT.get(i).sklasyfikowanyKraj);
+            for(int k = 0; k<krajePoSorcie.size(); k++){
+                System.out.print(" |"+krajePoSorcie.get(k).odległosc + " " + krajePoSorcie.get(k).kraj+"| ");
+            }
+            System.out.println("");
         }
     }
 }

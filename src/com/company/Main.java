@@ -73,14 +73,15 @@ public class Main {
                 String metryka = scan.nextLine();
                 Knn knn = new Knn();
                 if(metryka.equals("1")){
-                    knn.metrykaEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,500);
+                    knn.metrykaEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,6);
                 }
                 if(metryka.equals("2")){
-                    knn.metrykaCzybyszewa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,500);
+                    knn.metrykaCzybyszewa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,6);
                 }
                 if(metryka.equals("3")){
-                    knn.metrykaManhattan(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,500);
+                    knn.metrykaManhattan(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,6);
                 }
+                knn.klasyfikacja(Kontenery.ZbiorTekstowTestowych);
                 /*for (int i = 0; i<Kontenery.ZbiorTekstowTestowych.size(); i++){
                     System.out.println("Nowy tekst: "+Kontenery.ZbiorTekstowTestowych.get(i).kraj);
                     for(int j = 0; j<Kontenery.ZbiorTekstowTestowych.get(i).odleglosciOdTekstowUczacych.size(); j++){
@@ -88,13 +89,13 @@ public class Main {
                     }
                     System.out.println("");
                 }*/
-                for(int i=0; i<Kontenery.ZbiorTekstowTestowych.size(); i++){
+                /*for(int i=0; i<Kontenery.ZbiorTekstowTestowych.size(); i++){
                     System.out.println("Nowy tekst: "+Kontenery.ZbiorTekstowTestowych.get(i).kraj+ " === "+Kontenery.ZbiorTekstowTestowych.get(i).listaSlow);
                     for(int j = 0; j<Kontenery.ZbiorTekstowTestowych.get(i).kNajblizszychTekstow.size(); j++){
                         System.out.print("|"+Kontenery.ZbiorTekstowTestowych.get(i).kNajblizszychTekstow.get(j).odległosc + " " +Kontenery.ZbiorTekstowTestowych.get(i).kNajblizszychTekstow.get(j).kraj+"|");
                     }
                     System.out.println("");
-                }
+                }*/
                 for (int i = 0; i < 50; ++i) System.out.println();
                 menu(cechy);
                 break;
