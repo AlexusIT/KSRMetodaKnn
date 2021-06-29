@@ -73,13 +73,13 @@ public class Main {
                 String metryka = scan.nextLine();
                 Knn knn = new Knn();
                 if(metryka.equals("1")){
-                    knn.metrykaEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,6);
+                    knn.metrykaEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,200);
                 }
                 if(metryka.equals("2")){
-                    knn.metrykaCzybyszewa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,6);
+                    knn.metrykaCzybyszewa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,200);
                 }
                 if(metryka.equals("3")){
-                    knn.metrykaManhattan(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,6);
+                    knn.metrykaManhattan(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,200);
                 }
                 knn.klasyfikacja(Kontenery.ZbiorTekstowTestowych);
                 /*for (int i = 0; i<Kontenery.ZbiorTekstowTestowych.size(); i++){

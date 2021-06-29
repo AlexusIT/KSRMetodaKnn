@@ -22,31 +22,24 @@ public class Knn {
             for (int i = 0; i < (TU.length() - 4 + 1); i++) {
                 for (int j = 0; j < (TT.length() - 4 + 1); j++) {
                     if (TU.charAt(i) == TT.charAt(j) && TU.charAt(i + 1) == TT.charAt(j + 1) && TU.charAt(i + 2) == TT.charAt(j + 2) && TU.charAt(i + 3) == TT.charAt(j + 3)) {
-                        //System.out.println("char: "+(TU.charAt(i)));
                         suma++;
                         break;
                     }
                 }
             }
-            //System.out.println("suma: "+suma);
-            //System.out.println("dzilnik: "+ (TU.length()-4+1));
             wynik = suma / ((Tuu - 4 + 1));
-            //System.out.println("Wynik NGRAM = "+ wynik);
-        } else {
+        }
+        else {
             int suma = 0;
             for (int i = 0; i < (TT.length() - 4 + 1); i++) {
                 for (int j = 0; j < (TU.length() - 4 + 1); j++) {
                     if (TT.charAt(i) == TU.charAt(j) && TT.charAt(i + 1) == TU.charAt(j + 1) && TT.charAt(i + 2) == TU.charAt(j + 2) && TT.charAt(i + 3) == TU.charAt(j + 3)) {
-                        //System.out.println("char: "+(TT.charAt(i)));
                         suma++;
                         break;
                     }
                 }
             }
-            //System.out.println("suma: "+suma);
-            //System.out.println("dzilnik: "+ (TT.length()-4+1));
             wynik = suma / ((Ttt - 4 + 1));
-            //System.out.println("Wynik NGRAM = "+ wynik);
         }
         return wynik;
     }
@@ -121,15 +114,6 @@ public class Knn {
     }
     public void klasyfikacja(ArrayList<Tekst> tekstT){
         for (int i = 0; i < tekstT.size(); i++) {
-            ArrayList<Integer> kraje = new ArrayList<>();
-            kraje.add(0);kraje.add(0);kraje.add(0);kraje.add(0);kraje.add(0);kraje.add(0);
-            int usa = 0;
-            int canada = 0;
-            int germany = 0;
-            int uk = 0;
-            int france = 0;
-            int japan = 0;
-
             ArrayList<Mapa> krajDoPrzypisania = new ArrayList<>();
             Mapa mapUsa = new Mapa(0,"usa");
             Mapa mapCanada = new Mapa(0,"canada");
@@ -140,33 +124,21 @@ public class Knn {
 
             for (int j = 0; j < tekstT.get(i).kNajblizszychTekstow.size(); j++) {
                 if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("usa")){
-                    kraje.set(0,kraje.get(0)+1);
-                    usa++;
                     mapUsa.odległosc++;
                 }
                 else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("canada")){
-                    kraje.set(1,kraje.get(1)+1);
-                    canada++;
                     mapCanada.odległosc++;
                 }
                 else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("west-germany")){
-                    kraje.set(2,kraje.get(2)+1);
-                    germany++;
                     mapGermany.odległosc++;
                 }
                 else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("uk")){
-                    kraje.set(3,kraje.get(3)+1);
-                    uk++;
                     mapUk.odległosc++;
                 }
                 else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("france")){
-                    kraje.set(4,kraje.get(4)+1);
-                    france++;
                     mapFrance.odległosc++;
                 }
                 else if(tekstT.get(i).kNajblizszychTekstow.get(j).kraj.equals("japan")){
-                    kraje.set(5,kraje.get(5)+1);
-                    japan++;
                     mapJapan.odległosc++;
                 }
             }

@@ -61,10 +61,7 @@ public class Cechy {
             else{
                 tekst.wszystkieSlowa = tekst.wszystkieSlowa + tekst.listaUnikSlow.get(i);
             }
-            System.out.println(tekst.listaUnikSlow.get(i)+ ": "+tekst.listaWystUnikSlow.get(i));
         }
-        System.out.println(tekst.wszystkieSlowa);
-        System.out.println("\n NOWY TEKST");
     }
     public void cecha2(Tekst tekst){
         tekst.c2 = 1;
@@ -85,12 +82,6 @@ public class Cechy {
                 tekst.licznikMiaryAmeryka++;
             }
 
-        }
-        if(tekst.licznikMiaryEuropa>0){
-            System.out.println("europa = " + tekst.licznikMiaryEuropa);
-        }
-        if(tekst.licznikMiaryAmeryka>0){
-            System.out.println("ameryka = " + tekst.licznikMiaryAmeryka);
         }
     }
     public void cecha3(Tekst tekst){
@@ -148,13 +139,6 @@ public class Cechy {
                 break;
             }
         }
-        /*for(int i=0; i<tekst.listaSlow.size(); i++){
-            System.out.println(tekst.listaSlow.get(i));
-        }*/
-        System.out.println("EUR: "+tekst.licznikEUR);
-        System.out.println("  USA: " +tekst.licznikUSD);
-        System.out.println("    JPN: " +tekst.licznikJPY);
-        System.out.println("      CAD: " +tekst.licznikCAD);
     }
 
     public void cecha5(Tekst tekst){
@@ -280,11 +264,6 @@ public class Cechy {
                 }
             }
         }
-        System.out.println("KRAJ: "+ tekst.kraj);
-        System.out.println("LicznikUSA: "+ tekst.licznikKoncowekUSACAN);
-        System.out.println("LicznikGER: "+ tekst.licznikKoncowekGER);
-        System.out.println("LicznikJPN: "+ tekst.licznikKoncowekJPN);
-        System.out.println("");
     }
     public void cecha8(Tekst tekst){
         tekst.c8 = 1;
@@ -296,15 +275,12 @@ public class Cechy {
             if(Character.isUpperCase(tekst.listaSlow.get(i+1).charAt(0))){
                 if(tekst.listaSlow.get(i).equals(von)){
                     tekst.licznikVON++;
-                    System.out.println("dodalem von");
                     break;
                 }
                 else{
                     for(int j = 0; j<przedFRC.length; j++){
                         if(tekst.listaSlow.get(i).equals(przedFRC[j])){
                             tekst.licznikFran++;
-                            System.out.println(tekst.kraj);
-                            System.out.println("dodalem fran");
                             break;
                         }
                     }
@@ -335,10 +311,6 @@ public class Cechy {
             else if(tekst.listaSlow.get(i).contains("!")){
                 tekst.licznikWykrzyk++;
             }
-        }
-        if(tekst.licznikZapyt > 0 || tekst.licznikWykrzyk > 0) {
-            System.out.println("Liczba znakow zap: " + tekst.licznikZapyt);
-            System.out.println("Liczba znakow wyk: " + tekst.licznikWykrzyk);
         }
     }
     public void dodawanieWykonanychCech(Tekst tekst){
