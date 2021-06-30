@@ -50,6 +50,9 @@ public class MiaryJakosci {
                     sumaWyst = sumaWyst + 1;
                 }
             }
+            if(prec==0){
+                return 0.0;
+            }
             return (prec/sumaWyst);
         }
         else{

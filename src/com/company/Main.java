@@ -55,9 +55,11 @@ public class Main {
                     for(int i = 0; i < Kontenery.WszytkieTeksty.size(); i++){
                         if(i%2==0 && i < (ilosc * 2)){
                             Kontenery.ZbiorTekstowUczacych.add(Kontenery.WszytkieTeksty.get(i));
+
                         }
                         else{
                             Kontenery.ZbiorTekstowTestowych.add(Kontenery.WszytkieTeksty.get(i));
+
                         }
                     }
                     System.out.println("Tekstow wszystkich: "+Kontenery.WszytkieTeksty.size()+ "\n"+
@@ -71,16 +73,19 @@ public class Main {
                 System.out.println("Wybierz metrykę");
                 System.out.println("Eulidesa -> '1'\nCzybyszewa -> '2'\nManhattan -> '3'");
                 String metryka = scan.nextLine();
+                System.out.println("Podaj ilość sąsiadów");
+                String sasiad = scan.nextLine();
+                int sas = Integer.parseInt(sasiad);
                 Knn knn = new Knn();
                 MiaryJakosci miary = new MiaryJakosci();
                 if(metryka.equals("1")){
-                    knn.metrykaEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,3);
+                    knn.metrykaEuklidesa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,sas);
                 }
                 if(metryka.equals("2")){
-                    knn.metrykaCzybyszewa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,3);
+                    knn.metrykaCzybyszewa(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,sas);
                 }
                 if(metryka.equals("3")){
-                    knn.metrykaManhattan(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,3);
+                    knn.metrykaManhattan(Kontenery.ZbiorTekstowUczacych, Kontenery.ZbiorTekstowTestowych,sas);
                 }
                 knn.klasyfikacja(Kontenery.ZbiorTekstowTestowych);
                 System.out.println("Accuracy:");
